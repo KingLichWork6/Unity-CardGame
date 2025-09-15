@@ -107,12 +107,12 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool IsChoosing;
     [HideInInspector] public bool IsHandCardPlaying;
 
-    private Transform _enemyHand;
-    private Transform _playerHand;
-    private Transform _enemyField;
-    private Transform _playerField;
-    private GameObject _enemyHandPass;
-    private GameObject _playerHandPass;
+    [SerializeField] private Transform _enemyHand;
+    [SerializeField] private Transform _playerHand;
+    [SerializeField] private Transform _enemyField;
+    [SerializeField] private Transform _playerField;
+    [SerializeField] private GameObject _enemyHandPass;
+    [SerializeField] private GameObject _playerHandPass;
 
     private int _turn;
     private int _turnTime;
@@ -156,14 +156,6 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
-
-        _enemyHand = GameObject.Find("UI/MainCanvas/EnemyHand/HandLayout").transform;
-        _playerHand = GameObject.Find("UI/MainCanvas/PlayerHand/HandLayout").transform;
-        _enemyField = GameObject.Find("UI/MainCanvas/EnemyTable/TableLayout").transform;
-        _playerField = GameObject.Find("UI/MainCanvas/PlayerTable/TableLayout").transform;
-
-        _enemyHandPass = GameObject.Find("UI/MainCanvas/EnemyHand/PassImage");
-        _playerHandPass = GameObject.Find("UI/MainCanvas/PlayerHand/PassImage");
 
         _playerField.GetComponent<DropField>().DropCard.AddListener(PlayerDropCardStartCoroutine);
         _enemyField.GetComponent<DropField>().DropCard.AddListener(PlayerDropCardStartCoroutine);

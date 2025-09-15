@@ -78,10 +78,6 @@ public class CardInfoScript : MonoBehaviour
                 case "ru":
                     Description.text = card.BaseCard.DescriptionRu.ToString();
                     break;
-
-                case "uk":
-                    Description.text = card.BaseCard.DescriptionUk.ToString();
-                    break;
             }
         else
             Description.text = card.BaseCard.DescriptionEng.ToString();

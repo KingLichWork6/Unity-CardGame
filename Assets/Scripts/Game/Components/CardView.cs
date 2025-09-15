@@ -157,7 +157,6 @@ public class CardView : MonoBehaviour, IPointerClickHandler
             {
                 ("en") => SpawnCard.BaseCard.DescriptionEng,
                 ("ru") => SpawnCard.BaseCard.DescriptionRu,
-                ("uk") => SpawnCard.BaseCard.DescriptionUk,
                 _ => SpawnCard.BaseCard.DescriptionEng,
             };
         else
@@ -165,7 +164,6 @@ public class CardView : MonoBehaviour, IPointerClickHandler
             {
                 ("en") => "Illusion.",
                 ("ru") => "Иллюзия.",
-                ("uk") => "Ілюзія.",
                 _ => "Illusion.",
             };
     }
@@ -187,11 +185,6 @@ public class CardView : MonoBehaviour, IPointerClickHandler
                 case "ru":
                     cardViewDescription.Name.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].NameRu;
                     cardViewDescription.Description.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].DescriptionRu;
-                    break;
-
-                case "uk":
-                    cardViewDescription.Name.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].NameUk;
-                    cardViewDescription.Description.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].DescriptionUk;
                     break;
             }
         else

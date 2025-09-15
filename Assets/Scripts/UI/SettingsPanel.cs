@@ -20,8 +20,8 @@ public class SettingsPanel : UIPanel
 
     [SerializeField] private TMP_Dropdown _languageDropdown;
 
-    private AudioClip[] voiceClips;
-    private AudioClip[] effectsClips;
+    private AudioClip[] _voiceClips;
+    private AudioClip[] _effectsClips;
 
     private int _baseVolume = 20;
     private int _minVolume = 20;
@@ -60,8 +60,8 @@ public class SettingsPanel : UIPanel
         _mainAudioMixer.SetFloat("EffectsVolume", Mathf.Log10(_effectsSoundVolume.value) * 20);
         _mainAudioMixer.SetFloat("VoiceVolume", Mathf.Log10(_voiceSoundVolume.value) * 20);
 
-        voiceClips = Resources.LoadAll<AudioClip>("Sounds/Cards/Deployment/");
-        effectsClips = Resources.LoadAll<AudioClip>("Sounds/Cards/StartOrder/");
+        _voiceClips = Resources.LoadAll<AudioClip>("Sounds/Cards/Deployment/");
+        _effectsClips = Resources.LoadAll<AudioClip>("Sounds/Cards/StartOrder/");
 
         _howToPlayToggle.isOn = HowToPlay.Instance.IsHowToPlay;
 
@@ -137,10 +137,10 @@ public class SettingsPanel : UIPanel
     private void PlayRandomSound(AudioSource audioSource, bool isVoice)
     {
         if (isVoice)
-            audioSource.clip = voiceClips[UnityEngine.Random.Range(0, voiceClips.Length)];
+            audioSource.clip = _voiceClips[UnityEngine.Random.Range(0, _voiceClips.Length)];
 
         else
-            audioSource.clip = effectsClips[UnityEngine.Random.Range(0, effectsClips.Length)];
+            audioSource.clip = _effectsClips[UnityEngine.Random.Range(0, _effectsClips.Length)];
 
         audioSource.Play();
     }

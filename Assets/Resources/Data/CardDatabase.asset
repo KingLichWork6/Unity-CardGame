@@ -1,0 +1,2986 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0819e8ac8442a4d868ef9306c33861, type: 3}
+  m_Name: CardDatabase
+  m_EditorClassIdentifier: 
+  AllCards:
+  - Name: Lina
+    AbilityName: Dragon Slave
+    DescriptionEng: <color=red>Damage</color> 3 near enemy unit by 3.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 3 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      3 \u0440\u044F\u0434\u043E\u043C \u0441\u0442\u043E\u044F\u0449\u0438\u043C
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u043C \u043E\u0442\u0440\u044F\u0434\u0430\u043C."
+    MaxPoints: 5
+    Points: 5
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 3cdea60d0703fed4ea422c24dfc0b899, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 28c1c11bb083ce848894a220173a0ae1, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 3
+    NearDamage: 1
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Lina
+    AbilityName: Light Strike Array
+    DescriptionEng: <color=red>Damage</color> enemy unit by 3 and <color=yellow>stun</color>
+      its.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 3 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443
+      \u0438 <color=yellow>\u043E\u0433\u043B\u0443\u0448\u0438\u0442\u0435</color>
+      \u0435\u0433\u043E."
+    MaxPoints: 6
+    Points: 6
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: b92d735a520f4e04d8d7526da92a6d8a, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: d0b6066b0a26b3a44a7cb375fc8d5182, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 3
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 1
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Lina
+    AbilityName: Fiery Soul
+    DescriptionEng: At the end of the your turn, deal 1 <color=red>damage</color>
+      to a random enemy unit, repeat 3 <color=red>times</color>.
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 1
+      <color=red>\u0443\u0440\u043E\u043D</color> \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u0439
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u0439 \u0435\u0434\u0438\u043D\u0438\u0446\u0435,
+      \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 3 <color=red>\u0440\u0430\u0437\u0430</color>."
+    MaxPoints: 2
+    Points: 2
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 53f4d8ef43d775940adf40d33fd8113c, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 0cf826a1ba4bb2442b8dbec0b496e424, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 3
+    EndTurnRandomDamage: 1
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Lina
+    AbilityName: Laguna Blade
+    DescriptionEng: <color=red>Destroy</color> an enemy unit.
+    DescriptionRu: "<color=red>\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u044C\u0442\u0435</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0439 \u043E\u0442\u0440\u044F\u0434."
+    MaxPoints: 1
+    Points: 1
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: fcc291e94c644f944a2df5fc0ba4e04a, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 9ba24fe93704361489d30fc876314f1c, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: -1
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Luna
+    AbilityName: Lucent Beam
+    DescriptionEng: <color=red>Damage</color> enemy unit by 2 and <color=yellow>stun</color>
+      it.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 2 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443
+      \u0438 <color=yellow>\u043E\u0433\u043B\u0443\u0448\u0438\u0442\u0435</color>
+      \u0435\u0435."
+    MaxPoints: 7
+    Points: 7
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 31fb1a5c66d0edb49afbf45fc6f0eb0b, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: d1072853f42e1f44c9731a8e85a789c5, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 2
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 1
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Luna
+    AbilityName: Moon Glaives
+    DescriptionEng: At the end of the your turn, deal 1 <color=red>damage</color>
+      to a random enemy unit, repeat 2 <color=red>times</color>.
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 1
+      <color=red>\u0443\u0440\u043E\u043D</color> \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C\u0443
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443,
+      \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 2 <color=red>\u0440\u0430\u0437\u0430</color>."
+    MaxPoints: 5
+    Points: 5
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 2
+    Sprite: {fileID: 21300000, guid: 1ecb43c2c71e3a84182a05fb14e67a7e, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 6cf70166ebdeabb46be3c76976c64e89, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 2
+    EndTurnRandomDamage: 1
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Luna
+    AbilityName: Eclipse
+    DescriptionEng: <color=red>Damage</color> 5 near enemy units by 2.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 2 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      5 \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u043C \u043E\u0442\u0440\u044F\u0434\u0430\u043C,
+      \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0438\u043C\u0441\u044F \u0440\u044F\u0434\u043E\u043C."
+    MaxPoints: 7
+    Points: 7
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: d73fd90e09cbbf648bbad93e6003a24c, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 3142006f64efeac40b22f949f0a38eca, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 2
+    NearDamage: 2
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Templar Assasin
+    AbilityName: Refraction
+    DescriptionEng: <color=green>Boost</color> allied unit by 8. <color=red>Shield</color>.
+    DescriptionRu: "<color=green>\u0423\u0441\u0438\u043B\u044C\u0442\u0435</color>
+      \u0441\u043E\u044E\u0437\u043D\u044B\u0439 \u043E\u0442\u0440\u044F\u0434 \u043D\u0430
+      8. <color=red>\u0429\u0438\u0442</color>."
+    MaxPoints: 3
+    Points: 3
+    ColorTheme: {r: 1, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 19d5ae4f6d181ca4d9990273b58034d7, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 9fd3f3d0205afb842833a3c8c2f78def, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 8
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 1
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Templar Assasin
+    AbilityName: Meld
+    DescriptionEng: <color=red>Damage</color> enemy unit by 5. <color=red>Shield</color>.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 5 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443.
+      <color=red>\u0429\u0438\u0442</color>."
+    MaxPoints: 7
+    Points: 7
+    ColorTheme: {r: 1, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 34eb8a5e93267c24d9a18f36152db170, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: f4b1a4d0a9ccb8340a3e9b1a5b555b92, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 5
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 1
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Axe
+    AbilityName: Berserker's Call
+    DescriptionEng: <color=green>Boost</color> enemy unit by 3.
+    DescriptionRu: "<color=green>\u0423\u0441\u0438\u043B\u044C\u0442\u0435</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0439 \u043E\u0442\u0440\u044F\u0434
+      \u043D\u0430 3."
+    MaxPoints: 14
+    Points: 13
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 6
+    Sprite: {fileID: 21300000, guid: dcdaa90404b687643b14627a9ebc4f1b, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 8c633193364bd064390074dfa1a868ae, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: -3
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Axe
+    AbilityName: Culling Blade
+    DescriptionEng: <color=red>Destroy</color> an enemy unit with 4 or less points.
+    DescriptionRu: "<color=red>\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u044C\u0442\u0435</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0439 \u043E\u0442\u0440\u044F\u0434
+      \u0441 4 \u0438\u043B\u0438 \u043C\u0435\u043D\u0435\u0435 \u043E\u0447\u043A\u0430\u043C\u0438."
+    MaxPoints: 14
+    Points: 13
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 2
+    Sprite: {fileID: 21300000, guid: c1a78e872cddeb1489823c00ccb1be44, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: be6879856d35e5a41bacab4c716d65a2, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 4
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Centaur Warrunner
+    AbilityName: Double Edge
+    DescriptionEng: <color=red>Damage</color> self by 5.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 \u0441\u0435\u0431\u0435
+      5 <color=red>\u0443\u0440\u043E\u043D\u0430</color>."
+    MaxPoints: 20
+    Points: 16
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 2
+    Sprite: {fileID: 21300000, guid: bac7f61b3edae904c82489d77cf619ae, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 468f364ef0ac0d54885317578a43b5d0, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 5
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Centaur Warrunner
+    AbilityName: Retaliate
+    DescriptionEng: Whenever this unit takes damage, damage to the card that dealt
+      1 damage
+    DescriptionRu: "\u041A\u0430\u0436\u0434\u044B\u0439 \u0440\u0430\u0437, \u043A\u043E\u0433\u0434\u0430
+      \u044D\u0442\u043E\u0442 \u043E\u0442\u0440\u044F\u0434 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442
+      \u0443\u0440\u043E\u043D, \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435
+      1 <color=red>\u0443\u0440\u043E\u043D</color> \u043A\u0430\u0440\u0442\u0435,
+      \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043D\u0430\u043D\u0435\u0441\u043B\u0430
+      \u0443\u0440\u043E\u043D."
+    MaxPoints: 10
+    Points: 8
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 6
+    Sprite: {fileID: 21300000, guid: 38d20c00e503e424e9ce0ea57827b3f5, type: 3}
+    CardPlaySound: {fileID: 0}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 1
+    HealDamageValue: 0
+  - Name: Huskar
+    AbilityName: Life Break
+    DescriptionEng: <color=red>Damage</color> self and enemy unit by 7.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 \u0441\u0435\u0431\u0435
+      \u0438 \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443
+      \u043F\u043E 7 <color=red>\u0443\u0440\u043E\u043D\u0430</color>."
+    MaxPoints: 19
+    Points: 15
+    ColorTheme: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: d2456ef722d139441a505416bdd9ff0e, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: b95f4a0ca80463e44810cb7b7d21e2da, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 7
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 7
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 1
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Huskar
+    AbilityName: Burning Spear
+    DescriptionEng: At the end of the your turn, deal 1 <color=red>damage</color>
+      to a random enemy unit and self, repeat 2 <color=red>times</color>.
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 1
+      <color=red>\u0443\u0440\u043E\u043D</color> \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C\u0443
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443
+      \u0438 \u0441\u0435\u0431\u0435, \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435
+      2 <color=red>\u0440\u0430\u0437\u0430</color>."
+    MaxPoints: 6
+    Points: 6
+    ColorTheme: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    ArmorPoints: 4
+    Sprite: {fileID: 21300000, guid: 51b565baa78537941a549573c001ccd5, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: c224653fbda40b24ea9b9109c9d63631, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 2
+    EndTurnRandomDamage: 1
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 1
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Huskar
+    AbilityName: Berserkers Blood
+    DescriptionEng: At the end of the your turn, <color=red>boost</color> self by
+      1, repeat 1 <color=red>times</color>.
+    DescriptionRu: "<color=red>\u0423\u0432\u0435\u043B\u0438\u0447\u044C\u0442\u0435</color>
+      \u0441\u0435\u0431\u044F \u043D\u0430 1 \u0432 \u043A\u043E\u043D\u0446\u0435
+      \u0432\u0430\u0448\u0435\u0433\u043E \u0445\u043E\u0434\u0430, \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435
+      1 <color=red>\u0440\u0430\u0437</color>."
+    MaxPoints: 19
+    Points: 6
+    ColorTheme: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: e1ec332bea7d5494785fcf8eaa70608a, type: 3}
+    CardPlaySound: {fileID: 0}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 1
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 1
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Windranger
+    AbilityName: Powershot
+    DescriptionEng: <color=red>Damage</color> enemy unit by 5 and units near by 1.
+    DescriptionRu: "<color=red>\u041F\u043E\u0432\u0440\u0435\u0434\u0438\u0442\u0435</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0439 \u043E\u0442\u0440\u044F\u0434
+      \u043D\u0430 5 \u0438 \u043E\u0442\u0440\u044F\u0434\u044B \u0440\u044F\u0434\u043E\u043C
+      \u043D\u0430 1."
+    MaxPoints: 4
+    Points: 4
+    ColorTheme: {r: 0, g: 1, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: b1d152e191bfc5d49bac2ae91a8f662a, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 2f447a07244b82b4db1890d1e8812104, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 5
+    NearDamage: 1
+    ChangeNearDamage: -4
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Windranger
+    AbilityName: Windrun
+    DescriptionEng: <color=red>Draw</color> 1 card
+    DescriptionRu: "<color=red>\u0412\u043E\u0437\u044C\u043C\u0438\u0442\u0435</color>
+      1 \u043A\u0430\u0440\u0442\u0443"
+    MaxPoints: 3
+    Points: 3
+    ColorTheme: {r: 0, g: 1, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: d89cddd627d3cb34eb3760245e75a8ad, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 91ddb9aa24a1c0b40a530a09258e605d, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 1
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Kunkka
+    AbilityName: Tidebringer
+    DescriptionEng: <color=red>Damage</color> enemy unit by 1, and units near by
+      5.
+    DescriptionRu: "<color=red>\u041F\u043E\u0432\u0440\u0435\u0434\u0438\u0442\u0435</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0439 \u043E\u0442\u0440\u044F\u0434
+      \u043D\u0430 1, \u0438 \u043E\u0442\u0440\u044F\u0434\u044B \u0440\u044F\u0434\u043E\u043C
+      \u043D\u0430 5."
+    MaxPoints: 5
+    Points: 5
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 0b23eb44459365341953a8387ab74afe, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: d2e7335aa2665054a8adaca0ca280974, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 1
+    NearDamage: 5
+    ChangeNearDamage: 4
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Kunkka
+    AbilityName: Ghost Ship
+    DescriptionEng: <color=blue>Spawn</color> Ghost Ship to the left of this unit.
+    DescriptionRu: "<color=blue>\u041F\u0440\u0438\u0437\u043E\u0432\u0438\u0442\u0435</color>
+      \u041F\u0440\u0438\u0437\u0440\u0430\u0447\u043D\u044B\u0439 \u041A\u043E\u0440\u0430\u0431\u043B\u044C
+      \u0441\u043B\u0435\u0432\u0430 \u043E\u0442 \u044D\u0442\u043E\u0433\u043E
+      \u043E\u0442\u0440\u044F\u0434\u0430."
+    MaxPoints: 7
+    Points: 7
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 7e780c6d6cbad514591e6daebba61d11, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: b0e50ca6b035c2447b572db88d32f3b2, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 2
+    SpawnCardCount: 1
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Earthshaker
+    AbilityName: Fissure
+    DescriptionEng: <color=red>Damage</color> enemy unit by 3 and near by 2, then
+      <color=yellow>stun</color> them.
+    DescriptionRu: "<color=red>\u041F\u043E\u0432\u0440\u0435\u0434\u0438\u0442\u0435</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0439 \u043E\u0442\u0440\u044F\u0434
+      \u043D\u0430 3 \u0438 \u043E\u0442\u0440\u044F\u0434\u044B \u0440\u044F\u0434\u043E\u043C
+      \u043D\u0430 2, \u0437\u0430\u0442\u0435\u043C <color=yellow>\u043E\u0433\u043B\u0443\u0448\u0438\u0442\u0435</color>
+      \u0438\u0445."
+    MaxPoints: 6
+    Points: 6
+    ColorTheme: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 7946f0f6d6d84654994f0d8425ba2362, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: c9ab1ee8dbf076d4690e517edeee334a, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 3
+    NearDamage: 2
+    ChangeNearDamage: -1
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 1
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Earthshaker
+    AbilityName: Echo Slam
+    DescriptionEng: <color=red>Damage</color> all enemy units by 2.
+    DescriptionRu: "<color=red>\u041F\u043E\u0432\u0440\u0435\u0434\u0438\u0442\u0435</color>
+      \u0432\u0441\u0435 \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0435 \u043E\u0442\u0440\u044F\u0434\u044B
+      \u043D\u0430 2."
+    MaxPoints: 4
+    Points: 4
+    ColorTheme: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 067cc5e6c56a1c1418a9fd053c9e13cb, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: b7441bfddacdf8f40ac68f73248b3079, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 2
+    NearDamage: -1
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Chen
+    AbilityName: Hand Of God
+    DescriptionEng: <color=green>Boost</color> all allied units by 1 and give them
+      2 <color=green>endurance</color>.
+    DescriptionRu: "<color=green>\u0423\u0441\u0438\u043B\u044C\u0442\u0435</color>
+      \u0432\u0441\u0435 \u0441\u043E\u044E\u0437\u043D\u044B\u0435 \u043E\u0442\u0440\u044F\u0434\u044B
+      \u043D\u0430 1 \u0438 \u0434\u0430\u0439\u0442\u0435 \u0438\u043C 2 <color=green>\u0432\u044B\u043D\u043E\u0441\u043B\u0438\u0432\u043E\u0441\u0442\u0438</color>."
+    MaxPoints: 3
+    Points: 3
+    ColorTheme: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 7b0046b4258b58244a072eaabccf1959, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: cd26cb97eb5d19e4db6057648fc4c085, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 1
+    NearBoost: -1
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 2
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Chen
+    AbilityName: Divine Favor
+    DescriptionEng: At the end of the your turn, deal 1 <color=green>boost</color>
+      to a random allied unit, repeat 2 <color=red>times</color>.
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 \u0434\u0430\u0439\u0442\u0435 1 <color=green>\u0443\u0441\u0438\u043B\u0435\u043D\u0438\u0435</color>
+      \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C\u0443 \u0441\u043E\u044E\u0437\u043D\u043E\u043C\u0443
+      \u043E\u0442\u0440\u044F\u0434\u0443, \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435
+      2 <color=red>\u0440\u0430\u0437\u0430</color>."
+    MaxPoints: 5
+    Points: 5
+    ColorTheme: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: dfccad99a0a1a9345826600824781ea1, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: e7bb1d202cc09104390edcd91450e1df, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 2
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 1
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Sniper
+    AbilityName: Assasinate
+    DescriptionEng: <color=red>Damage</color> enemy unit by 11.
+    DescriptionRu: "<color=red>\u041F\u043E\u0432\u0440\u0435\u0434\u0438\u0442\u0435</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0439 \u043E\u0442\u0440\u044F\u0434
+      \u043D\u0430 11."
+    MaxPoints: 3
+    Points: 3
+    ColorTheme: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 9c41e8fdd3e53af4cbfb641023262051, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 533faf5133a6c2649892549b796e98be, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 11
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Sniper
+    AbilityName: Shrapnel
+    DescriptionEng: At the end of the your turn, deal 1 <color=red>damage</color>
+      to a random enemy unit, repeat 2 <color=red>times</color>.
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 1
+      <color=red>\u0443\u0440\u043E\u043D</color> \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C\u0443
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443,
+      \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 2 <color=red>\u0440\u0430\u0437\u0430</color>."
+    MaxPoints: 4
+    Points: 4
+    ColorTheme: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    ArmorPoints: 1
+    Sprite: {fileID: 21300000, guid: c25f070b86361ee4799a660af9c2ce1f, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 533faf5133a6c2649892549b796e98be, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 2
+    EndTurnRandomDamage: 1
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Bane
+    AbilityName: BrainSap
+    DescriptionEng: <color=red>Damage</color> enemy unit and <color=green>boost</color>
+      self by 4.
+    DescriptionRu: "<color=red>\u041F\u043E\u0432\u0440\u0435\u0434\u0438\u0442\u0435</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0439 \u043E\u0442\u0440\u044F\u0434
+      \u0438 <color=green>\u0443\u0441\u0438\u043B\u044C\u0442\u0435</color> \u0441\u0435\u0431\u044F
+      \u043D\u0430 4."
+    MaxPoints: 4
+    Points: 4
+    ColorTheme: {r: 1, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 27c3719914902274b95fa3f9ce5e1cc5, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 42c498af28d7fa94c86b678e7a8bf33e, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 4
+    Damage: 4
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 1
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Zeus
+    AbilityName: Arc Lightning
+    DescriptionEng: <color=red>Damage</color> enemy unit by 3, and near units by
+      2, and near by 1.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 3 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443
+      \u0438 2 <color=red>\u0443\u0440\u043E\u043D\u0430</color> \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0438\u043C
+      \u043E\u0442\u0440\u044F\u0434\u0430\u043C, \u0438 1 <color=red>\u0443\u0440\u043E\u043D</color>
+      \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0438\u043C \u043E\u0442\u0440\u044F\u0434\u0430\u043C."
+    MaxPoints: 3
+    Points: 3
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 4ed5527ed09e67743b1126eb7e982918, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 8845779ba15fd344791b5fabb9e90df3, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 3
+    NearDamage: 2
+    ChangeNearDamage: -1
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Zeus
+    AbilityName: Lightning Bolt
+    DescriptionEng: <color=red>Damage</color> enemy unit by 5 and <color=yellow>stun</color>
+      it.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 5 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443
+      \u0438 <color=yellow>\u043E\u0433\u043B\u0443\u0448\u0438\u0442\u0435</color>
+      \u0435\u0433\u043E."
+    MaxPoints: 6
+    Points: 6
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 5ad889f25c25b294f9e616e33ebe70f6, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 5a98ce5630b136146802e3b972c4d6bc, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 5
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 1
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Zeus
+    AbilityName: Thundergod's Wrath
+    DescriptionEng: <color=red>Damage</color> all enemy units by 3.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 3 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0432\u0441\u0435\u043C \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u043C
+      \u043E\u0442\u0440\u044F\u0434\u0430\u043C."
+    MaxPoints: 1
+    Points: 1
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 130339f399f80f54bb1e72c506509e81, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 09ab2339a4c8e354b8cc5e92fac52104, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 3
+    NearDamage: -1
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Abaddon
+    AbilityName: Mist Coil
+    DescriptionEng: <color=green>Boost</color> allied unit by 8 and <color=red>damage</color>
+      self by 4.
+    DescriptionRu: "<color=green>\u0423\u0441\u0438\u043B\u044C\u0442\u0435</color>
+      \u0441\u043E\u044E\u0437\u043D\u044B\u0439 \u043E\u0442\u0440\u044F\u0434 \u043D\u0430
+      8 \u0438 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 4 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0441\u0435\u0431\u0435."
+    MaxPoints: 8
+    Points: 8
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: af8224b326db6b34f8f38b89fb26d748, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 03208f97a12fb11499bbbcbe8c1c109f, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 8
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 4
+    AddictionWithSelfField: 1
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Abaddon
+    AbilityName: Aphotic Shield
+    DescriptionEng: <color=green>Boost</color> allied unit by 2 and give it <color=red>shield</color>.
+      <color=red>Shield</color>.
+    DescriptionRu: "<color=green>\u0423\u0441\u0438\u043B\u044C\u0442\u0435</color>
+      \u0441\u043E\u044E\u0437\u043D\u044B\u0439 \u043E\u0442\u0440\u044F\u0434 \u043D\u0430
+      2 \u0438 \u0434\u0430\u0439\u0442\u0435 \u0435\u043C\u0443 <color=red>\u0449\u0438\u0442</color>."
+    MaxPoints: 8
+    Points: 8
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 6037436ae5f539a408e79d515a0ce23c, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: d07516e250047e24fa7e5f672979a4e9, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 2
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 1
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Abaddon
+    AbilityName: BorrowedTime
+    DescriptionEng: Whenever this unit takes <color=red>damage</color>, <color=green>boost</color>
+      him by damage value
+    DescriptionRu: "\u041A\u0430\u0436\u0434\u044B\u0439 \u0440\u0430\u0437, \u043A\u043E\u0433\u0434\u0430
+      \u044D\u0442\u043E\u0442 \u043E\u0442\u0440\u044F\u0434 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442
+      <color=red>\u0443\u0440\u043E\u043D</color>, <color=green>\u0443\u0441\u0438\u043B\u044C\u0442\u0435</color>
+      \u0435\u0433\u043E \u043D\u0430 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435
+      \u0443\u0440\u043E\u043D\u0430."
+    MaxPoints: 1
+    Points: 1
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 872bb23a8c0f12b4c805e7a64111a20d, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: dd820a89df7acc943be08a1e8969df10, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: -1
+  - Name: Chaos Knight
+    AbilityName: Phantasm
+    DescriptionEng: <color=blue>Spawn</color> 3 your <color=blue>illusions</color>
+      units near.
+    DescriptionRu: "<color=blue>\u0421\u043E\u0437\u0434\u0430\u0439\u0442\u0435</color>
+      3 \u0432\u0430\u0448\u0438\u0445 <color=blue>\u0438\u043B\u043B\u044E\u0437\u0438\u0438</color>
+      \u0440\u044F\u0434\u043E\u043C."
+    MaxPoints: 5
+    Points: 5
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: c6d64cd6632319b47a6c2101220ba9c7, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 8f091410a0ced434bb2686dfe8bf3674, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: -1
+    SpawnCardCount: 3
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Chaos Knight
+    AbilityName: Chaos Bolt
+    DescriptionEng: <color=red>Damage</color> enemy unit by 2, <color=yellow>stun</color>
+      him and <color=blue>spawn</color> 1 your <color=blue>illusion</color> unit
+      near.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 2 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443,
+      <color=yellow>\u043E\u0433\u043B\u0443\u0448\u0438\u0442\u0435</color> \u0435\u0433\u043E
+      \u0438 <color=blue>\u0441\u043E\u0437\u0434\u0430\u0439\u0442\u0435</color>
+      1 \u0432\u0430\u0448\u0443 <color=blue>\u0438\u043B\u043B\u044E\u0437\u0438\u044E</color>
+      \u0440\u044F\u0434\u043E\u043C."
+    MaxPoints: 6
+    Points: 6
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: afbf2b208ab5c83479318688050446d6, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: ca90880ef3546d54e9bf0074ea6050d3, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 2
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 1
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: -1
+    SpawnCardCount: 1
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 1
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Chaos Knight
+    AbilityName: Chaos Strike
+    DescriptionEng: At the end of the your turn, deal 1 <color=red>damage</color>
+      to a random enemy unit and <color=green>boost</color> self, repeat 1 <color=red>times</color>.
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 1
+      <color=red>\u0443\u0440\u043E\u043D</color> \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C\u0443
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443
+      \u0438 <color=green>\u0443\u0441\u0438\u043B\u044C\u0442\u0435</color> \u0441\u0435\u0431\u044F,
+      \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 1 <color=red>\u0440\u0430\u0437</color>."
+    MaxPoints: 3
+    Points: 3
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 52d4a1752cb77ac4ab298489e8a0b97a, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: f36d04bd1865f864b94c024de52aa90e, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 1
+    EndTurnRandomDamage: 1
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 1
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Lycan
+    AbilityName: Summon Wolves
+    DescriptionEng: <color=blue>Spawn</color> 2 units Wolves near.
+    DescriptionRu: "\u0421\u043E\u0437\u0434\u0430\u0439\u0442\u0435 2 \u043E\u0442\u0440\u044F\u0434\u0430
+      \u0432\u043E\u043B\u043A\u043E\u0432 \u0440\u044F\u0434\u043E\u043C."
+    MaxPoints: 10
+    Points: 10
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 2298ca5ddebd7f14abe9b5eb9b2de59c, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: eeabb0db82ab1ea49a04d64101b98c4a, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 2
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Lycan
+    AbilityName: Feral Impulce
+    DescriptionEng: At the end of the your turn, deal 2 <color=green>boost</color>
+      to a random allied unit, repeat 1 <color=red>times</color>.
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 <color=green>\u0443\u0441\u0438\u043B\u044C\u0442\u0435</color>
+      \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0439 \u0441\u043E\u044E\u0437\u043D\u044B\u0439
+      \u043E\u0442\u0440\u044F\u0434 \u043D\u0430 2, \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435
+      1 <color=red>\u0440\u0430\u0437</color>."
+    MaxPoints: 6
+    Points: 6
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 8fff5ee44b00c4a4db156d016c80d60e, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 5fd9146fdb759cb4db0897063ac862fa, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 1
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 2
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Lycan
+    AbilityName: Shapeshift
+    DescriptionEng: '<color=red>Transformate</color> this unit to Lycan Wolf '
+    DescriptionRu: "\u0422\u0440\u0430\u043D\u0441\u0444\u043E\u0440\u043C\u0438\u0440\u0443\u0439\u0442\u0435
+      \u044D\u0442\u043E\u0442 \u043E\u0442\u0440\u044F\u0434 \u0432 \u0432\u043E\u043B\u043A\u0430
+      \u041B\u0438\u043A\u0430\u043D\u0430."
+    MaxPoints: 1
+    Points: 1
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 7b80d3a24f6ecd141a9f7a0a500189c4, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 5f997a84abda01c45afa39842ddee608, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: 0
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Riki
+    AbilityName: Tricks of the Trade
+    DescriptionEng: <color=red>Damage</color> 3 enemy units by 4. <color=purple>Invisibility</color>.
+      <color=orange>Invulnerability</color>.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 4 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      3 \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u043C \u043E\u0442\u0440\u044F\u0434\u0430\u043C.
+      <color=purple>\u041D\u0435\u0432\u0438\u0434\u0438\u043C\u043E\u0441\u0442\u044C</color>.
+      <color=orange>\u041D\u0435\u0443\u044F\u0437\u0432\u0438\u043C\u043E\u0441\u0442\u044C</color>."
+    MaxPoints: 2
+    Points: 2
+    ColorTheme: {r: 1, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 80bb42c8b3fc3fa42abc71cf2f47708f, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 439f77ad72ab6cd4da68ac556ba3bf9f, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 4
+    NearDamage: 1
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 1
+    IsInvulnerability: 1
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Riki
+    AbilityName: Cloak And Dagger
+    DescriptionEng: <color=red>Damage</color> enemy unit by 12. <color=purple>Invisibility</color>.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 12 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443.
+      <color=purple>\u041D\u0435\u0432\u0438\u0434\u0438\u043C\u043E\u0441\u0442\u044C</color>."
+    MaxPoints: 1
+    Points: 1
+    ColorTheme: {r: 1, g: 0, b: 1, a: 1}
+    ArmorPoints: 2
+    Sprite: {fileID: 21300000, guid: 3b4cc5feb52fdc54084aacf9d629c899, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 1eafcd457c0b67449b14911eccff13b3, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 12
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 1
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Juggernaut
+    AbilityName: Omnislash
+    DescriptionEng: <color=red>Damage</color> enemy units by 5 and near by 3 and
+      near by 1. <color=orange>Invulnerability</color>.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 5 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u043C \u043E\u0442\u0440\u044F\u0434\u0430\u043C,
+      3 <color=red>\u0443\u0440\u043E\u043D\u0430</color> \u0441\u043E\u0441\u0435\u0434\u043D\u0438\u043C
+      \u043E\u0442\u0440\u044F\u0434\u0430\u043C \u0438 1 <color=red>\u0443\u0440\u043E\u043D</color>
+      \u0441\u043E\u0441\u0435\u0434\u043D\u0435\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443.
+      <color=orange>\u041D\u0435\u0443\u044F\u0437\u0432\u0438\u043C\u043E\u0441\u0442\u044C</color>."
+    MaxPoints: 2
+    Points: 2
+    ColorTheme: {r: 0, g: 1, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 88d69beb75946784db68d365dda2096c, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: c45cda5219ef2f44cb14bbe3fe6aab8e, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 5
+    NearDamage: 2
+    ChangeNearDamage: -2
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 1
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Juggernaut
+    AbilityName: Blade Dance
+    DescriptionEng: At the end of the your turn, deal 4 <color=red>damage</color>
+      to a random enemy unit, repeat 1 <color=red>times</color>.
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 4
+      <color=red>\u0443\u0440\u043E\u043D\u0430</color> \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C\u0443
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443,
+      \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 1 <color=red>\u0440\u0430\u0437</color>."
+    MaxPoints: 1
+    Points: 1
+    ColorTheme: {r: 0, g: 1, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: ae7a971bf000f1e44bc08ded09234e41, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: b52f58c010fd8f640875c8c87dfdb2b6, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 1
+    EndTurnRandomDamage: 4
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Juggernaut
+    AbilityName: Healing Ward
+    DescriptionEng: <color=blue>Spawn</color> Healing Ward to the left of this unit.
+    DescriptionRu: "\u0421\u043E\u0437\u0434\u0430\u0439\u0442\u0435 Healing Ward
+      \u0441\u043B\u0435\u0432\u0430 \u043E\u0442 \u044D\u0442\u043E\u0433\u043E
+      \u043E\u0442\u0440\u044F\u0434\u0430."
+    MaxPoints: 1
+    Points: 1
+    ColorTheme: {r: 0, g: 1, b: 0, a: 1}
+    ArmorPoints: 2
+    Sprite: {fileID: 21300000, guid: 5302bb685648ed746bda09b41eaba8cb, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: b02c4c900117e0a47b3b936547157428, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 1
+    SpawnCardCount: 1
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Naga Siren
+    AbilityName: Mirror Image
+    DescriptionEng: <color=blue>Spawn</color> 2 your <color=blue>illusions</color>
+      units near.
+    DescriptionRu: "\u0421\u043E\u0437\u0434\u0430\u0439\u0442\u0435 2 \u0432\u0430\u0448\u0438
+      <color=blue>\u0438\u043B\u043B\u044E\u0437\u0438\u0438</color> \u0440\u044F\u0434\u043E\u043C."
+    MaxPoints: 7
+    Points: 7
+    ColorTheme: {r: 0, g: 1, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 6545010cc0507304e8e75c2c0a28718b, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 81f17883d57ee854895976ab19588109, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: -1
+    SpawnCardCount: 2
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Naga Siren
+    AbilityName: Song of the Siren
+    DescriptionEng: <color=yellow>Stun</color> all enemy units. <color=orange>Invulnerability</color>.
+    DescriptionRu: "\u041E\u0433\u043B\u0443\u0448\u0438\u0442\u0435 \u0432\u0441\u0435
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0435 \u043E\u0442\u0440\u044F\u0434\u044B.
+      <color=orange>\u041D\u0435\u0443\u044F\u0437\u0432\u0438\u043C\u043E\u0441\u0442\u044C</color>."
+    MaxPoints: 12
+    Points: 12
+    ColorTheme: {r: 0, g: 1, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: fe567c9f83acf384989b3b4f6eb1245c, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 79b379ba38cde5c4096f4656a40eb23a, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: -1
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 1
+    IsInvisibility: 0
+    IsInvulnerability: 1
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Terrorblade
+    AbilityName: Conjure Image
+    DescriptionEng: <color=blue>Spawn</color> 1 your <color=blue>illusion</color>
+      unit near. At the end of the your turn, deal 1 damage to a random enemy unit,
+      repeat 1 <color=red>times</color>.
+    DescriptionRu: "\u0421\u043E\u0437\u0434\u0430\u0439\u0442\u0435 1 \u0432\u0430\u0448\u0443
+      <color=blue>\u0438\u043B\u043B\u044E\u0437\u0438\u044E</color> \u0440\u044F\u0434\u043E\u043C.
+      \u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 1
+      <color=red>\u0443\u0440\u043E\u043D</color> \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C\u0443
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443,
+      \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 1 <color=red>\u0440\u0430\u0437</color>."
+    MaxPoints: 3
+    Points: 3
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 9bc01c55caaef424ba4ed4a748e03734, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 6e6429694a5c2df4baa3816192639f9c, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 1
+    EndTurnRandomDamage: 1
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: -1
+    SpawnCardCount: 1
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Terrorblade
+    AbilityName: Sunder
+    DescriptionEng: <color=red>Swap points</color> with unit.
+    DescriptionRu: "\u041F\u043E\u043C\u0435\u043D\u044F\u0439\u0442\u0435 \u043E\u0447\u043A\u0438
+      \u0441 \u043E\u0442\u0440\u044F\u0434\u043E\u043C."
+    MaxPoints: 8
+    Points: 8
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: f085839932cb0684aa2ed5c34bfd823f, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: ad643a21a5f138445a92fcd4d2dfb8d9, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 1
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Bloodseeker
+    AbilityName: Bloodrage
+    DescriptionEng: Give self 3 <color=red>bleeding</color>.
+    DescriptionRu: "\u0414\u0430\u0439\u0442\u0435 \u0441\u0435\u0431\u0435 3 <color=red>\u043A\u0440\u043E\u0432\u043E\u0442\u0435\u0447\u0435\u043D\u0438\u044F</color>."
+    MaxPoints: 12
+    Points: 12
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 8f281c098782cde4dad848f5958fb312, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 75b638ebcd358914c9cd06ec6e2fb758, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: -3
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Bloodseeker
+    AbilityName: Rupture
+    DescriptionEng: Give an enemy unit 7 <color=red>bleeding</color>.
+    DescriptionRu: "\u0414\u0430\u0439\u0442\u0435 \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443
+      \u043E\u0442\u0440\u044F\u0434\u0443 7 <color=red>\u043A\u0440\u043E\u0432\u043E\u0442\u0435\u0447\u0435\u043D\u0438\u0439</color>."
+    MaxPoints: 8
+    Points: 8
+    ColorTheme: {r: 1, g: 0, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 55e74774f7a311c4e92b788188564d28, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 202752652fd86fd41816310fb5903a31, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: -7
+    IsEnemyTargetEnduranceOrBleeding: 1
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Hoodwink
+    AbilityName: Bushwhack
+    DescriptionEng: <color=red>Damage</color> 3 near enemy units by 2 then <color=yellow>stun</color>
+      them.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 2 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      3 \u0441\u043E\u0441\u0435\u0434\u043D\u0438\u043C \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u043C
+      \u043E\u0442\u0440\u044F\u0434\u0430\u043C, \u0437\u0430\u0442\u0435\u043C
+      <color=yellow>\u043E\u0433\u043B\u0443\u0448\u0438\u0442\u0435</color> \u0438\u0445."
+    MaxPoints: 6
+    Points: 6
+    ColorTheme: {r: 0, g: 1, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 7e6a47043eafaa049b5184f03426ed62, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 50ff7aa88a6f3cc4a9a39cee357fe358, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 2
+    NearDamage: 1
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 1
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Hoodwink
+    AbilityName: Sharpshooter
+    DescriptionEng: '<color=blue>Timer</color> 4: at the end of your turn, deal 4
+      <color=red>damage</color> to a random enemy unit 1 <color=red>times</color>.'
+    DescriptionRu: "\u0422\u0430\u0439\u043C\u0435\u0440 4: \u0432 \u043A\u043E\u043D\u0446\u0435
+      \u0432\u0430\u0448\u0435\u0433\u043E \u0445\u043E\u0434\u0430 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435
+      4 <color=red>\u0443\u0440\u043E\u043D\u0430</color> \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C\u0443
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443
+      1 <color=red>\u0440\u0430\u0437</color>."
+    MaxPoints: 3
+    Points: 3
+    ColorTheme: {r: 0, g: 1, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: d2ef99da4d0c49f4e904ac154c155de6, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 98ee654a0e4ebe348bd8520ab00bf8b3, type: 3}
+    CardTimerSound: {fileID: 8300000, guid: 127c1f1e3f8f74e4ba7a6052aa68e981, type: 3}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 1
+    EndTurnRandomDamage: 4
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 4
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Sven
+    AbilityName: Storm Hammer
+    DescriptionEng: <color=red>Damage</color> enemy unit by 2 and <color=yellow>stun</color>
+      then.
+    DescriptionRu: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 2 <color=red>\u0443\u0440\u043E\u043D\u0430</color>
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443
+      \u0438 <color=yellow>\u043E\u0433\u043B\u0443\u0448\u0438\u0442\u0435</color>
+      \u0435\u0433\u043E."
+    MaxPoints: 8
+    Points: 8
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 6
+    Sprite: {fileID: 21300000, guid: 942b2706eb882824aa9b9de6f0cf459f, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: c5489bdc025df0643a0eda24fc52fdca, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 2
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 1
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Sven
+    AbilityName: Warcry
+    DescriptionEng: Give all allied units 3 armor.
+    DescriptionRu: "\u0414\u0430\u0439\u0442\u0435 \u0432\u0441\u0435\u043C \u0441\u043E\u044E\u0437\u043D\u044B\u043C
+      \u043E\u0442\u0440\u044F\u0434\u0430\u043C 3 \u0431\u0440\u043E\u043D\u0438."
+    MaxPoints: 7
+    Points: 7
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 3
+    Sprite: {fileID: 21300000, guid: effb5bf523bcf664e864fea00a884701, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 6e8da4655b0950549b4cce72a80d574c, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: -1
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 3
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Sven
+    AbilityName: God's Strength
+    DescriptionEng: '<color=blue>Timer</color> 3: <color=green>boost</color> self
+      by self max point'
+    DescriptionRu: "\u0422\u0430\u0439\u043C\u0435\u0440 3: <color=green>\u0443\u0441\u0438\u043B\u044C\u0442\u0435</color>
+      \u0441\u0435\u0431\u044F \u043D\u0430 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0435
+      \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043E\u0447\u043A\u043E\u0432."
+    MaxPoints: 8
+    Points: 8
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 2
+    Sprite: {fileID: 21300000, guid: 883e18d1174cc5a418351d1510772416, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: 6a2f711b78bb12848a3a883122730b67, type: 3}
+    CardTimerSound: {fileID: 8300000, guid: aa2bbc442e6331f46bbc6a5ff60f5e70, type: 3}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 1
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 8
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 3
+    TimerNoMoreActions: 1
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Lycan
+    AbilityName: Wolf Form
+    DescriptionEng: At the end of your turn, deal 2 <color=red>Damage</color> to
+      nearby units.
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 2
+      <color=red>\u0443\u0440\u043E\u043D\u0430</color> \u0441\u043E\u0441\u0435\u0434\u043D\u0438\u043C
+      \u043E\u0442\u0440\u044F\u0434\u0430\u043C."
+    MaxPoints: 20
+    Points: 20
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 2c1287734a9a183429c83c4e881c40c4, type: 3}
+    CardPlaySound: {fileID: 0}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 1
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 2
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Wolf
+    AbilityName: Summon
+    DescriptionEng: Nothing
+    DescriptionRu: "\u041D\u0438\u0447\u0435\u0433\u043E"
+    MaxPoints: 2
+    Points: 2
+    ColorTheme: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 0682bd44bf0fea24a80d39f3cfc25d3d, type: 3}
+    CardPlaySound: {fileID: 0}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 0
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Healing Ward
+    AbilityName: Ward
+    DescriptionEng: At the end of your turn, <color=green>boost</color> 2 nearby
+      units by 2
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 <color=green>\u0443\u0441\u0438\u043B\u044C\u0442\u0435</color>
+      2 \u0441\u043E\u0441\u0435\u0434\u043D\u0438\u0445 \u043E\u0442\u0440\u044F\u0434\u0430
+      \u043D\u0430 2."
+    MaxPoints: 1
+    Points: 1
+    ColorTheme: {r: 0, g: 1, b: 0, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: 931de29a6aa79d9488d059c9def541ba, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: b7dda6b678be1d14688e9b078343e231, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 1
+    EndTurnRandomDamage: 0
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 0
+    EndTurnNearBoost: 2
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
+  - Name: Ghost Ship
+    AbilityName: Ship
+    DescriptionEng: At the end of your turn, deal 2 <color=red>damage</color> to
+      a random enemy unit and 1 damage to yourself 1 <color=red>times</color>.
+    DescriptionRu: "\u0412 \u043A\u043E\u043D\u0446\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+      \u0445\u043E\u0434\u0430 \u043D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 2
+      <color=red>\u0443\u0440\u043E\u043D\u0430</color> \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C\u0443
+      \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u043E\u043C\u0443 \u043E\u0442\u0440\u044F\u0434\u0443
+      \u0438 1 <color=red>\u0443\u0440\u043E\u043D</color> \u0441\u0435\u0431\u0435
+      1 <color=red>\u0440\u0430\u0437</color>."
+    MaxPoints: 5
+    Points: 5
+    ColorTheme: {r: 0, g: 0, b: 1, a: 1}
+    ArmorPoints: 0
+    Sprite: {fileID: 21300000, guid: cf731cdf395e8c243adbff4041c6e983, type: 3}
+    CardPlaySound: {fileID: 8300000, guid: e1f9e60d7473c56458622250ad729560, type: 3}
+    CardTimerSound: {fileID: 0}
+    Boost: 0
+    NearBoost: 0
+    ChangeNearBoost: 0
+    SelfBoost: 0
+    Damage: 0
+    NearDamage: 0
+    ChangeNearDamage: 0
+    SelfDamage: 0
+    AddictionWithSelfField: 0
+    AddictionWithEnemyField: 0
+    EndTurnCount: 1
+    EndTurnRandomDamage: 2
+    EndTurnRandomBoost: 0
+    EndTurnSelfBoost: 0
+    EndTurnSelfDamage: 1
+    EndTurnNearBoost: 0
+    EndTurnNearDamage: 0
+    Timer: 0
+    TimerNoMoreActions: 0
+    ArmorOther: 0
+    SpawnCardNumber: 0
+    SpawnCardCount: 0
+    DrawCardCount: 0
+    IsShieldOther: 0
+    IsStunOther: 0
+    IsInvisibility: 0
+    IsInvulnerability: 0
+    IsSelfShielded: 0
+    SelfEnduranceOrBleeding: 0
+    EnduranceOrBleedingOther: 0
+    IsEnemyTargetEnduranceOrBleeding: 0
+    DestroyCardPoints: 0
+    SwapPoints: 0
+    TransformationNumber: -1
+    ReturnDamageValue: 0
+    HealDamageValue: 0
