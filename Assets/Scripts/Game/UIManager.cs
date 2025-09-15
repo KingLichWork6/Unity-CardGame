@@ -24,14 +24,15 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private EndGamePanel _endGamePanel;
 
-    private TextMeshProUGUI _playerPointsTMPro;
-    private TextMeshProUGUI _enemyPointsTMPro;
-    private TextMeshProUGUI _playerDeckTMPro;
-    private TextMeshProUGUI _enemyDeckTMPro;
+    [SerializeField] private TextMeshProUGUI _playerPointsTMPro;
+    [SerializeField] private TextMeshProUGUI _enemyPointsTMPro;
+    [SerializeField] private TextMeshProUGUI _playerDeckTMPro;
+    [SerializeField] private TextMeshProUGUI _enemyDeckTMPro;
 
-    private Image[] _imageTurnTime = new Image[2];
-    private LineRenderer _line;
-    private Button _endTurnButton;
+    [SerializeField] private Image[] _imageTurnTime = new Image[2];
+    [SerializeField] private Button _endTurnButton;
+
+    [SerializeField] private LineRenderer _line;
 
     private void Awake()
     {
@@ -39,19 +40,6 @@ public class UIManager : MonoBehaviour
         {
             _instance = this;
         }
-
-        _playerPointsTMPro = GameObject.Find("UI/MainCanvas/RightUI/Points/PlayerAllPointsImage/PlayerAllPoints").GetComponent<TextMeshProUGUI>();
-        _enemyPointsTMPro = GameObject.Find("UI/MainCanvas/RightUI/Points/EnemyAllPointsImage/EnemyAllPoints").GetComponent<TextMeshProUGUI>();
-
-        _playerDeckTMPro = GameObject.Find("UI/MainCanvas/RightUI/PlayerDeck/DeckCountText").GetComponent<TextMeshProUGUI>();
-        _enemyDeckTMPro = GameObject.Find("UI/MainCanvas/RightUI/EnemyDeck/DeckCountText").GetComponent<TextMeshProUGUI>();
-
-        _imageTurnTime[0] = GameObject.Find("UI/MainCanvas/RightUI/EndTurnButton/ImagesTurnTime/ImageTurnTime").GetComponent<Image>();
-        _imageTurnTime[1] = GameObject.Find("UI/MainCanvas/RightUI/EndTurnButton/ImagesTurnTime/ImageTurnTime1").GetComponent<Image>();
-
-        _endTurnButton = GameObject.Find("UI/MainCanvas/RightUI/EndTurnButton").GetComponent<Button>();
-
-        _line = GameObject.Find("UI/MainCanvas/Line").GetComponent<LineRenderer>();
     }
 
     public void ChangeEndTurnButtonInteractable(bool isInteractable)

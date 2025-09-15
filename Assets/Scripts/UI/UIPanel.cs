@@ -6,7 +6,7 @@ public abstract class UIPanel : MonoBehaviour
 
     private void Awake()
     {
-        _holder = GetComponentInChildren<GameObject>();
+        _holder = transform.GetChild(0).gameObject;
     }
 
     public void Show()

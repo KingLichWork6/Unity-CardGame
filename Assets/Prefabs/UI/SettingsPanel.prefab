@@ -698,8 +698,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isIdentically: 0
-  _en: 
-  _ru: 
+  _en: 'Language:'
+  _ru: "\u042F\u0437\u044B\u043A:"
 --- !u!1 &3056707977270023795
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,8 +832,6 @@ MonoBehaviour:
     - m_Text: English
       m_Image: {fileID: 0}
     - m_Text: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
-      m_Image: {fileID: 0}
-    - m_Text: "\u0423\u043A\u0440\u0430\u0457\u043D\u0441\u044C\u043A\u0430"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1072,8 +1070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isIdentically: 0
-  _en: 
-  _ru: 
+  _en: How To Play
+  _ru: "\u041A\u0430\u043A \u0438\u0433\u0440\u0430\u0442\u044C"
 --- !u!1 &4494398799910462770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,8 +1220,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isIdentically: 0
-  _en: 
-  _ru: 
+  _en: Effects volume
+  _ru: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u0437\u0432\u0443\u043A\u043E\u0432"
 --- !u!1 &4545772473359042712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,8 +1648,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isIdentically: 0
-  _en: 
-  _ru: 
+  _en: Voice volume
+  _ru: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u0440\u0435\u0447\u0438"
 --- !u!1 &5612504447974893480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,7 +1806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Close Settings
+  m_text: Close
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f39a3b0723114148ba3f9d728349d73, type: 2}
   m_sharedMaterial: {fileID: 6640169494650683046, guid: 4f39a3b0723114148ba3f9d728349d73, type: 2}
@@ -1890,8 +1888,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isIdentically: 0
-  _en: 
-  _ru: 
+  _en: Close
+  _ru: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
 --- !u!1 &5738564570329146032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,8 +2315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isIdentically: 0
-  _en: 
-  _ru: 
+  _en: Master volume
+  _ru: "\u041E\u0431\u0449\u0430\u044F \u0433\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C"
 --- !u!1 &6335732404080914268
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,6 +23,9 @@ public class SettingsPanel : UIPanel
     private AudioClip[] voiceClips;
     private AudioClip[] effectsClips;
 
+    private int _baseVolume = 20;
+    private int _minVolume = 20;
+
     public static event Action ChangeLanguage;
 
     private void OnEnable()
@@ -84,9 +87,9 @@ public class SettingsPanel : UIPanel
 
     public void SettingsShow()
     {
-        _masterSoundVolume.value = Mathf.Pow(10, GetFloatFromAudioMixer("MasterVolume") / 20);
-        _effectsSoundVolume.value = Mathf.Pow(10, GetFloatFromAudioMixer("EffectsVolume") / 20);
-        _voiceSoundVolume.value = Mathf.Pow(10, GetFloatFromAudioMixer("VoiceVolume") / 20);
+        _masterSoundVolume.value = GetFloatFromAudioMixer("MasterVolume") * _baseVolume - _minVolume;
+        _effectsSoundVolume.value = GetFloatFromAudioMixer("EffectsVolume") * _baseVolume - _minVolume;
+        _voiceSoundVolume.value = GetFloatFromAudioMixer("VoiceVolume") * _baseVolume - _minVolume;
 
         Show();
     }
@@ -112,21 +115,21 @@ public class SettingsPanel : UIPanel
 
     private void MasterVolumeChanged(float value)
     {
-        _mainAudioMixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
+        _mainAudioMixer.SetFloat("MasterVolume", value * _baseVolume - _minVolume);
 
         PlayRandomSound(_audioSourceVoice, true);
     }
 
     private void EffectsVolumeChanged(float value)
     {
-        _mainAudioMixer.SetFloat("EffectsVolume", Mathf.Log10(value) * 20);
+        _mainAudioMixer.SetFloat("EffectsVolume", value * _baseVolume - _minVolume);
 
         PlayRandomSound(_audioSourceVolume, false);
     }
 
     private void VoiceVolumeChanged(float value)
     {
-        _mainAudioMixer.SetFloat("VoiceVolume", Mathf.Log10(value) * 20);
+        _mainAudioMixer.SetFloat("VoiceVolume", value * _baseVolume - _minVolume);
 
         PlayRandomSound(_audioSourceVoice, true);
     }
