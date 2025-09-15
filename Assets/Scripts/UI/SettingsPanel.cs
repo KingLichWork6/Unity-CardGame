@@ -108,12 +108,6 @@ public class SettingsPanel : UIPanel
         PlayerPrefs.Save();
 
         ChangeLanguage.Invoke();
-
-        LocalizedText[] texts = FindObjectsOfType<LocalizedText>();
-        foreach (var text in texts)
-        {
-            text.UpdateText();
-        }
     }
 
     private void MasterVolumeChanged(float value)

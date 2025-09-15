@@ -167,7 +167,7 @@ public class EffectsManager : MonoBehaviour
         card.Image.material.SetFloat("_Damage", damage);
         card.Image.material.SetColor("_Color", color);
 
-        if(math.abs(value) > 12)
+        if (math.abs(value) > 12)
             card.Image.material.SetFloat("_Value", 0);
         else
             card.Image.material.SetFloat("_Value", math.abs(value));

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -98,7 +98,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
             CardTimer.text = card.SelfCard.EndTurnActions.Timer.ToString();
         }
 
-        else 
+        else
             TimerGameObject.SetActive(false);
 
         CardViewName.colorGradient = new VertexGradient(card.SelfCard.BaseCard.ColorTheme, card.SelfCard.BaseCard.ColorTheme, Color.black, Color.black);
@@ -124,7 +124,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
             ShowSpawnCardView(card, true, true);
         else if (card.SelfCard.Spawns.SpawnCardCount != 0)
             ShowSpawnCardView(card, true);
-        else if(card.SelfCard.UniqueMechanics.TransformationNumber != -1)
+        else if (card.SelfCard.UniqueMechanics.TransformationNumber != -1)
             ShowSpawnCardView(card, false);
     }
 
@@ -152,7 +152,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         SpawnCardViewName.colorGradient = new VertexGradient(SpawnCard.BaseCard.ColorTheme, SpawnCard.BaseCard.ColorTheme, Color.black, Color.black);
         SpawnCardViewDescription.color = Color.black;
 
-        if(!selfIllusion)
+        if (!selfIllusion)
             SpawnCardViewDescription.text = LocalizationManager.Instance.Language switch
             {
                 ("en") => SpawnCard.BaseCard.DescriptionEng,
@@ -164,8 +164,8 @@ public class CardView : MonoBehaviour, IPointerClickHandler
             SpawnCardViewDescription.text = LocalizationManager.Instance.Language switch
             {
                 ("en") => "Illusion.",
-                ("ru") => "Èëëþçèÿ.",
-                ("uk") => "²ëþç³ÿ.",
+                ("ru") => "Ð˜Ð»Ð»ÑŽÐ·Ð¸Ñ.",
+                ("uk") => "Ð†Ð»ÑŽÐ·Ñ–Ñ.",
                 _ => "Illusion.",
             };
     }
@@ -176,24 +176,24 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         cardViewDescription.Image.sprite = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].EffectImage;
 
 
-        if(FindObjectOfType<LocalizationManager>() != null)
-        switch (LocalizationManager.Instance.Language)
-        {
-            case "en":
-                cardViewDescription.Name.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].NameEng;
-                cardViewDescription.Description.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].DescriptionEng;
-                break;
+        if (FindObjectOfType<LocalizationManager>() != null)
+            switch (LocalizationManager.Instance.Language)
+            {
+                case "en":
+                    cardViewDescription.Name.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].NameEng;
+                    cardViewDescription.Description.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].DescriptionEng;
+                    break;
 
-            case "ru":
-                cardViewDescription.Name.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].NameRu;
-                cardViewDescription.Description.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].DescriptionRu;
-                break;
+                case "ru":
+                    cardViewDescription.Name.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].NameRu;
+                    cardViewDescription.Description.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].DescriptionRu;
+                    break;
 
-            case "uk":
-                cardViewDescription.Name.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].NameUk;
-                cardViewDescription.Description.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].DescriptionUk;
-                break;
-        }
+                case "uk":
+                    cardViewDescription.Name.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].NameUk;
+                    cardViewDescription.Description.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].DescriptionUk;
+                    break;
+            }
         else
         {
             cardViewDescription.Name.text = CardEffectsDescriptionList.effectDescriptionList[NumberEffects].NameEng;
@@ -319,7 +319,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         else
             StatusEffectDescriptionList[13].SetActive(false);
 
-        if (card.SelfCard.EndTurnActions.Timer > 0 )
+        if (card.SelfCard.EndTurnActions.Timer > 0)
         {
             StatusEffectDescriptionList[14].SetActive(true);
             countStatuseffects++;
@@ -332,7 +332,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
 
         if (height > 780)
         {
-            CardViewDescriptionParent.GetComponent<RectTransform>().sizeDelta = new Vector2(CardViewDescriptionParent.GetComponent<RectTransform>().sizeDelta.x, height/2);
+            CardViewDescriptionParent.GetComponent<RectTransform>().sizeDelta = new Vector2(CardViewDescriptionParent.GetComponent<RectTransform>().sizeDelta.x, height / 2);
             CardViewDescriptionView.verticalScrollbar.value = 1;
         }
         else

@@ -103,10 +103,10 @@ public class HowToPlay : MonoBehaviour
         StopCoroutine(HowToPlayGameCoroutine());
     }
 
-    private void NextPanelHowToPlay(GameObject[] panels,int number)
+    private void NextPanelHowToPlay(GameObject[] panels, int number)
     {
         panels[number - 1].SetActive(false);
         if (number < panels.Length)
-        panels[number].SetActive(true);
+            panels[number].SetActive(true);
     }
 }

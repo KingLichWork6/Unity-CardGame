@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 public class Game
 {
@@ -123,6 +125,8 @@ public class GameManager : MonoBehaviour
     private CardInfoScript _choosenCard;
     private Camera _mainCamera;
 
+    public static event Action HideEndGamePanel;
+
     public bool IsPlayerTurn
     {
         get
@@ -215,7 +219,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GiveCardtoHand(List<Card> deck, Transform hand, float time, bool isPlayer, bool isStart = false)
     {
-        if (deck.Count == 0) 
+        if (deck.Count == 0)
             yield break;
 
         Card card = deck[0];
@@ -224,7 +228,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(time);
 
-        if(!isStart)
+        if (!isStart)
             EffectsManager.Instance.HideDrawCardEffect();
 
         GameObject cardHand = Instantiate(CardPref, hand, false);
@@ -345,8 +349,8 @@ public class GameManager : MonoBehaviour
         IsHandCardPlaying = false;
         UIManager.Instance.ChangeEndTurnButtonInteractable(IsPlayerTurn);
 
-        if(!(_isPlayerPassed && _isEnemyPassed))
-        AllCoroutine.Add(StartCoroutine(TurnFunk()));
+        if (!(_isPlayerPassed && _isEnemyPassed))
+            AllCoroutine.Add(StartCoroutine(TurnFunk()));
     }
 
     private IEnumerator EnemyTurn(List<CardInfoScript> enemyHandCards)
@@ -1153,7 +1157,7 @@ public class GameManager : MonoBehaviour
         {
             for (int i = 0; i < _playerField.childCount; i++)
             {
-                    temporyList[i] = _playerField.GetChild(i).GetComponent<CardInfoScript>();
+                temporyList[i] = _playerField.GetChild(i).GetComponent<CardInfoScript>();
             }
         }
         else
@@ -1169,7 +1173,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        UIManager.Instance.EndGamePanel.SetActive(false);
+        HideEndGamePanel.Invoke();
 
         StopAllCoroutines();
 

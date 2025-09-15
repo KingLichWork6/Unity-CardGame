@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -68,21 +68,21 @@ public class CardInfoScript : MonoBehaviour
         SecondName.text = card.BaseCard.AbilityName.ToString();
 
 
-        if(FindObjectOfType<LocalizationManager>() != null)
-        switch (LocalizationManager.Instance.Language)
-        {
-            case "en":
-                Description.text = card.BaseCard.DescriptionEng.ToString();
-                break;
+        if (FindObjectOfType<LocalizationManager>() != null)
+            switch (LocalizationManager.Instance.Language)
+            {
+                case "en":
+                    Description.text = card.BaseCard.DescriptionEng.ToString();
+                    break;
 
-            case "ru":
-                Description.text = card.BaseCard.DescriptionRu.ToString();
-                break;
+                case "ru":
+                    Description.text = card.BaseCard.DescriptionRu.ToString();
+                    break;
 
-            case "uk":
-                Description.text = card.BaseCard.DescriptionUk.ToString();
-                break;
-        }
+                case "uk":
+                    Description.text = card.BaseCard.DescriptionUk.ToString();
+                    break;
+            }
         else
             Description.text = card.BaseCard.DescriptionEng.ToString();
 

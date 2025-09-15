@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
@@ -15,7 +15,7 @@ public struct EffectDescription
     public string DescriptionUk;
 
 
-    public EffectDescription(string effectImagePath, string nameEng, string nameRu, string nameUk, string descriptionEng, string descriptionRu, string descriptionUk) 
+    public EffectDescription(string effectImagePath, string nameEng, string nameRu, string nameUk, string descriptionEng, string descriptionRu, string descriptionUk)
     {
         EffectImage = Resources.Load<SpriteAtlas>("Sprites/Effects/EffectSpiteAtlas").GetSprite(effectImagePath);
         NameEng = nameEng;
@@ -29,7 +29,7 @@ public struct EffectDescription
 }
 
 public static class CardEffectsDescriptionList
-{ 
+{
     public static List<EffectDescription> effectDescriptionList = new List<EffectDescription>();
 }
 
@@ -38,153 +38,153 @@ public class EffectsDescripton : MonoBehaviour
     private void Awake()
     {
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
-            "Destroy", 
-            "Destroy", 
-            "Уничтожьте", 
-            "Знищте", 
-            "Сhange card points to 0.", 
-            "Измените очки карты до 0.", 
-            "Змініть очки картки на 0."
+            "Destroy",
+            "Destroy",
+            "РЈРЅРёС‡С‚РѕР¶СЊС‚Рµ",
+            "Р—РЅРёС‰С‚Рµ",
+            "РЎhange card points to 0.",
+            "РР·РјРµРЅРёС‚Рµ РѕС‡РєРё РєР°СЂС‚С‹ РґРѕ 0.",
+            "Р—РјС–РЅС–С‚СЊ РѕС‡РєРё РєР°СЂС‚РєРё РЅР° 0."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Damage",
             "Damage",
-            "Урон",
-            "Шкода",
-            "Сhange card points to - value.",
-            "Измените очки карты на - значение.",
-            "Змініть очки картки на - значення."
+            "РЈСЂРѕРЅ",
+            "РЁРєРѕРґР°",
+            "РЎhange card points to - value.",
+            "РР·РјРµРЅРёС‚Рµ РѕС‡РєРё РєР°СЂС‚С‹ РЅР° - Р·РЅР°С‡РµРЅРёРµ.",
+            "Р—РјС–РЅС–С‚СЊ РѕС‡РєРё РєР°СЂС‚РєРё РЅР° - Р·РЅР°С‡РµРЅРЅСЏ."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Boost",
             "Boost",
-            "Усиление",
-            "Підсилення",
-            "Сhange card points to + value.",
-            "Измените очки карты на + значение.",
-            "Змініть очки картки на + значення."
+            "РЈСЃРёР»РµРЅРёРµ",
+            "РџС–РґСЃРёР»РµРЅРЅСЏ",
+            "РЎhange card points to + value.",
+            "РР·РјРµРЅРёС‚Рµ РѕС‡РєРё РєР°СЂС‚С‹ РЅР° + Р·РЅР°С‡РµРЅРёРµ.",
+            "Р—РјС–РЅС–С‚СЊ РѕС‡РєРё РєР°СЂС‚РєРё РЅР° + Р·РЅР°С‡РµРЅРЅСЏ."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Spawn",
             "Spawn",
-            "Создание",
-            "Створення",
-            "Сreate a unit.",
-            "Создайте отряд.",
-            "Створіть загiн."
+            "РЎРѕР·РґР°РЅРёРµ",
+            "РЎС‚РІРѕСЂРµРЅРЅСЏ",
+            "РЎreate a unit.",
+            "РЎРѕР·РґР°Р№С‚Рµ РѕС‚СЂСЏРґ.",
+            "РЎС‚РІРѕСЂС–С‚СЊ Р·Р°РіiРЅ."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Draw",
             "Draw card",
-            "Добор карты",
-            "Витяг картки",
+            "Р”РѕР±РѕСЂ РєР°СЂС‚С‹",
+            "Р’РёС‚СЏРі РєР°СЂС‚РєРё",
             "Add first card from deck to your hand.",
-            "Добавьте первую карту из колоды в вашу руку.",
-            "Додайте першу карту з колоди до вашої руки."
+            "Р”РѕР±Р°РІСЊС‚Рµ РїРµСЂРІСѓСЋ РєР°СЂС‚Сѓ РёР· РєРѕР»РѕРґС‹ РІ РІР°С€Сѓ СЂСѓРєСѓ.",
+            "Р”РѕРґР°Р№С‚Рµ РїРµСЂС€Сѓ РєР°СЂС‚Сѓ Р· РєРѕР»РѕРґРё РґРѕ РІР°С€РѕС— СЂСѓРєРё."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Near",
             "Near",
-            "Рядом",
-            "Поряд",
+            "Р СЏРґРѕРј",
+            "РџРѕСЂСЏРґ",
             "Cards to the left and right of the selected one.",
-            "Карты слева и справа от выбранной.",
-            "Карти зліва і справа від вибраної."
+            "РљР°СЂС‚С‹ СЃР»РµРІР° Рё СЃРїСЂР°РІР° РѕС‚ РІС‹Р±СЂР°РЅРЅРѕР№.",
+            "РљР°СЂС‚Рё Р·Р»С–РІР° С– СЃРїСЂР°РІР° РІС–Рґ РІРёР±СЂР°РЅРѕС—."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Armor",
             "Armor",
-            "Броня",
-            "Броня",
+            "Р‘СЂРѕРЅСЏ",
+            "Р‘СЂРѕРЅСЏ",
             "Block Damage",
-            "Блокирует урон.",
-            "Блокує шкоду."
+            "Р‘Р»РѕРєРёСЂСѓРµС‚ СѓСЂРѕРЅ.",
+            "Р‘Р»РѕРєСѓС” С€РєРѕРґСѓ."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Stun",
             "Stun",
-            "Оглушение",
-            "Оглушення",
+            "РћРіР»СѓС€РµРЅРёРµ",
+            "РћРіР»СѓС€РµРЅРЅСЏ",
             "The target's end of turn abilities are disabled for 1 turn.",
-            "Способности цели в конце хода отключены на 1 ход.",
-            "Здібності цілі в кінці ходу вимкнені на 1 хід."
+            "РЎРїРѕСЃРѕР±РЅРѕСЃС‚Рё С†РµР»Рё РІ РєРѕРЅС†Рµ С…РѕРґР° РѕС‚РєР»СЋС‡РµРЅС‹ РЅР° 1 С…РѕРґ.",
+            "Р—РґС–Р±РЅРѕСЃС‚С– С†С–Р»С– РІ РєС–РЅС†С– С…РѕРґСѓ РІРёРјРєРЅРµРЅС– РЅР° 1 С…С–Рґ."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Shield",
             "Shield",
-            "Щит",
-            "Щит",
+            "Р©РёС‚",
+            "Р©РёС‚",
             "Blocks 1 tick of damage.",
-            "Блокирует 1 получение урона.",
-            "Блокує 1 одержання шкоди."
+            "Р‘Р»РѕРєРёСЂСѓРµС‚ 1 РїРѕР»СѓС‡РµРЅРёРµ СѓСЂРѕРЅР°.",
+            "Р‘Р»РѕРєСѓС” 1 РѕРґРµСЂР¶Р°РЅРЅСЏ С€РєРѕРґРё."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Illusion",
             "Illusion",
-            "Иллюзия",
-            "Ілюзія",
+            "РР»Р»СЋР·РёСЏ",
+            "Р†Р»СЋР·С–СЏ",
             "Receives 2 times more damage.",
-            "Получает в 2 раза больше урона.",
-            "Отримує в 2 рази більше шкоди."
+            "РџРѕР»СѓС‡Р°РµС‚ РІ 2 СЂР°Р·Р° Р±РѕР»СЊС€Рµ СѓСЂРѕРЅР°.",
+            "РћС‚СЂРёРјСѓС” РІ 2 СЂР°Р·Рё Р±С–Р»СЊС€Рµ С€РєРѕРґРё."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Invisibility",
             "Invisibility",
-            "Невидимость",
-            "Невидимість",
+            "РќРµРІРёРґРёРјРѕСЃС‚СЊ",
+            "РќРµРІРёРґРёРјС–СЃС‚СЊ",
             "The card must be played onto the enemy field.",
-            "Карта должна быть сыграна на поле врага.",
-            "Картку потрібно зіграти на полі ворога."
+            "РљР°СЂС‚Р° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ СЃС‹РіСЂР°РЅР° РЅР° РїРѕР»Рµ РІСЂР°РіР°.",
+            "РљР°СЂС‚РєСѓ РїРѕС‚СЂС–Р±РЅРѕ Р·С–РіСЂР°С‚Рё РЅР° РїРѕР»С– РІРѕСЂРѕРіР°."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Invulnerability",
             "Invulnerability",
-            "Неуязвимость",
-            "Невразливість",
+            "РќРµСѓСЏР·РІРёРјРѕСЃС‚СЊ",
+            "РќРµРІСЂР°Р·Р»РёРІС–СЃС‚СЊ",
             "Card cannot be targeted.",
-            "Карта не может быть выбрана целью.",
-            "Картка не може бути обрана ціллю."
+            "РљР°СЂС‚Р° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РІС‹Р±СЂР°РЅР° С†РµР»СЊСЋ.",
+            "РљР°СЂС‚РєР° РЅРµ РјРѕР¶Рµ Р±СѓС‚Рё РѕР±СЂР°РЅР° С†С–Р»Р»СЋ."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Bleeding",
             "Bleeding",
-            "Кровотечение",
-            "Кровотеча",
+            "РљСЂРѕРІРѕС‚РµС‡РµРЅРёРµ",
+            "РљСЂРѕРІРѕС‚РµС‡Р°",
             "At the end of your turn damage card by 1 and change duration -1.",
-            "В конце вашего хода наносите карте 1 урон и уменьшите продолжительность на 1.",
-            "В кінці вашого ходу завдайте картці 1 шкоду і зменшіть тривалість на 1."
+            "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРѕСЃРёС‚Рµ РєР°СЂС‚Рµ 1 СѓСЂРѕРЅ Рё СѓРјРµРЅСЊС€РёС‚Рµ РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ РЅР° 1.",
+            "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ РєР°СЂС‚С†С– 1 С€РєРѕРґСѓ С– Р·РјРµРЅС€С–С‚СЊ С‚СЂРёРІР°Р»С–СЃС‚СЊ РЅР° 1."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Endurance",
             "Endurance",
-            "Выносливость",
-            "Витривалість",
+            "Р’С‹РЅРѕСЃР»РёРІРѕСЃС‚СЊ",
+            "Р’РёС‚СЂРёРІР°Р»С–СЃС‚СЊ",
             "At the end of your turn boost card by 1 and change duration -1.",
-            "В конце вашего хода увеличьте очки карты на 1 и уменьшите продолжительность на 1.",
-            "В кінці вашого ходу збільшіть очки картки на 1 і зменшіть тривалість на 1."
+            "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° СѓРІРµР»РёС‡СЊС‚Рµ РѕС‡РєРё РєР°СЂС‚С‹ РЅР° 1 Рё СѓРјРµРЅСЊС€РёС‚Рµ РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ РЅР° 1.",
+            "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р±С–Р»СЊС€С–С‚СЊ РѕС‡РєРё РєР°СЂС‚РєРё РЅР° 1 С– Р·РјРµРЅС€С–С‚СЊ С‚СЂРёРІР°Р»С–СЃС‚СЊ РЅР° 1."
         ));
 
         CardEffectsDescriptionList.effectDescriptionList.Add(new EffectDescription(
             "Timer",
             "Timer",
-            "Таймер",
-            "Таймер",
+            "РўР°Р№РјРµСЂ",
+            "РўР°Р№РјРµСЂ",
             "At the end of your turn change value timer by -1, if it becomes 0, apply the effect.",
-            "В конце вашего хода уменьшите значение таймера на 1, если оно станет 0, примените эффект.",
-            "В кінці вашого ходу зменшіть значення таймера на 1, якщо воно стане 0, застосуйте ефект."
+            "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° СѓРјРµРЅСЊС€РёС‚Рµ Р·РЅР°С‡РµРЅРёРµ С‚Р°Р№РјРµСЂР° РЅР° 1, РµСЃР»Рё РѕРЅРѕ СЃС‚Р°РЅРµС‚ 0, РїСЂРёРјРµРЅРёС‚Рµ СЌС„С„РµРєС‚.",
+            "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·РјРµРЅС€С–С‚СЊ Р·РЅР°С‡РµРЅРЅСЏ С‚Р°Р№РјРµСЂР° РЅР° 1, СЏРєС‰Рѕ РІРѕРЅРѕ СЃС‚Р°РЅРµ 0, Р·Р°СЃС‚РѕСЃСѓР№С‚Рµ РµС„РµРєС‚."
         ));
     }
 }

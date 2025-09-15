@@ -22,14 +22,7 @@ public class UIManager : MonoBehaviour
 
     [HideInInspector] public bool IsPause;
 
-    public GameObject EndGamePanel;
-
-    [SerializeField] private TextMeshProUGUI _endGameText;
-
-    [SerializeField] private TextMeshProUGUI _endGameWin;
-    [SerializeField] private TextMeshProUGUI _endGameLose;
-    [SerializeField] private TextMeshProUGUI _endGameDraw;
-    [SerializeField] private TextMeshProUGUI _pauseText;
+    [SerializeField] private EndGamePanel _endGamePanel;
 
     private TextMeshProUGUI _playerPointsTMPro;
     private TextMeshProUGUI _enemyPointsTMPro;
@@ -90,7 +83,7 @@ public class UIManager : MonoBehaviour
             _playerPointsTMPro.fontSize = 50;
         }
 
-        else if (enemyPoints > playerPoints) 
+        else if (enemyPoints > playerPoints)
         {
             _playerPointsTMPro.color = Color.black;
             _playerPointsTMPro.fontSize = 36;
@@ -192,33 +185,19 @@ public class UIManager : MonoBehaviour
     public void EndGame(int playerPoints, int enemyPoint)
     {
         StopAllCoroutines();
-        EndGamePanel.SetActive(true);
 
-        if (playerPoints < enemyPoint)
-        {
-            _endGameText.text = _endGameLose.text;
-        }
-
-        else if (playerPoints > enemyPoint)
-        {
-            _endGameText.text = _endGameWin.text;
-        }
-
-        else
-        {
-            _endGameText.text = _endGameDraw.text;
-        }
+        _endGamePanel.EndGame(playerPoints,enemyPoint);
     }
 
     public void Pause()
     {
         IsPause = true;
-        EndGamePanel.SetActive(true);
-        _endGameText.text = _pauseText.text;
+        _endGamePanel.Pause();
     }
+
     public void UnPause()
     {
         IsPause = false;
-        EndGamePanel.SetActive(false);
+        _endGamePanel.Hide();
     }
 }

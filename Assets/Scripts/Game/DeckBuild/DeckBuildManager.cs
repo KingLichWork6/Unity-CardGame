@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,28 +20,28 @@ public class DeckBuildManager : MonoBehaviour
         }
     }
 
-    public GameObject CardPref;
-    public GameObject CardInDeckPref;
+    [SerializeField] private GameObject _cardPref;
+    [SerializeField] private GameObject _cardInDeckPref;
 
-    public GameObject DeckGameObject;
-    public GameObject CardContentView;
+    [SerializeField] private GameObject _deckGameObject;
+    [SerializeField] private GameObject _cardContentView;
 
-    public TextMeshProUGUI CountCard;
-    public TextMeshProUGUI NeedCountCard;
+    [SerializeField] private TextMeshProUGUI _countCard;
+    [SerializeField] private TextMeshProUGUI _needCountCard;
 
-    public AudioSource AudioSourceVoice;
-    public AudioSource AudioSourceEffects;
+    [SerializeField] private AudioSource _audioSourceVoice;
+    [SerializeField] private AudioSource _audioSourceEffects;
 
-    private List<Card> Deck = new List<Card>();
-    private List<GameObject> AllCards = new List<GameObject>();
+    [SerializeField] private GameObject[] _howToPlayList;
 
-    private List<CardInfoScript> CardInfoDeckList = new List<CardInfoScript>();
-    private List<CardInfoScript> RandomDeckList = new List<CardInfoScript>();
+    private List<Card> _deck = new List<Card>();
+    private List<GameObject> _allCards = new List<GameObject>();
 
-    private int NeedCountCardInDeck = 20;
-    private int CountCardInDeck = 0;
+    private List<CardInfoScript> _cardInfoDeckList = new List<CardInfoScript>();
+    private List<CardInfoScript> _randomDeckList = new List<CardInfoScript>();
 
-    public GameObject[] HowToPlayList;
+    private int _needCountCardInDeck = 20;
+    private int _countCardInDeck = 0;
 
     private void Awake()
     {
@@ -53,13 +53,13 @@ public class DeckBuildManager : MonoBehaviour
 
     private void Start()
     {
-        NeedCountCard.text = "/ " + NeedCountCardInDeck.ToString();
+        _needCountCard.text = "/ " + _needCountCardInDeck.ToString();
 
         ChangeCountCard();
 
         foreach (Card card in CardManagerList.AllCards)
         {
-            GameObject newCard = Instantiate(CardPref, Vector3.zero, Quaternion.identity, CardContentView.transform);
+            GameObject newCard = Instantiate(_cardPref, Vector3.zero, Quaternion.identity, _cardContentView.transform);
             newCard.transform.position = new Vector3(0, 0, 100);
             newCard.AddComponent<ClickCardOnDeckBuild>().IsMainCard = true;
             CardInfoScript cardInfo = newCard.GetComponent<CardInfoScript>();
@@ -67,25 +67,25 @@ public class DeckBuildManager : MonoBehaviour
             cardInfo.IsDeckBuildCard = true;
             newCard.GetComponent<CardMove>().enabled = false;
 
-            AllCards.Add(newCard);
-            CardInfoDeckList.Add(cardInfo);
+            _allCards.Add(newCard);
+            _cardInfoDeckList.Add(cardInfo);
         }
 
-        float height = (Mathf.Ceil((float)CardContentView.transform.childCount / 6) * 150 + (Mathf.Ceil((float)CardContentView.transform.childCount / 6) - 1) * 100) - 1065 + 250;
-        CardContentView.GetComponent<RectTransform>().sizeDelta = new Vector2(CardContentView.GetComponent<RectTransform>().sizeDelta.x, height);
-        CardContentView.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -height/2);
+        float height = (Mathf.Ceil((float)_cardContentView.transform.childCount / 6) * 150 + (Mathf.Ceil((float)_cardContentView.transform.childCount / 6) - 1) * 100) - 1065 + 250;
+        _cardContentView.GetComponent<RectTransform>().sizeDelta = new Vector2(_cardContentView.GetComponent<RectTransform>().sizeDelta.x, height);
+        _cardContentView.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -height / 2);
 
         if (Object.FindObjectOfType<HowToPlay>() != null)
-            HowToPlay.Instance.HowToPlayDeckBuild(HowToPlayList);
+            HowToPlay.Instance.HowToPlayDeckBuild(_howToPlayList);
     }
 
     public void AddCard(CardInfoScript card)
     {
-        CountCardInDeck++;
+        _countCardInDeck++;
 
         ChangeCountCard();
 
-        GameObject newCardInDeck = Instantiate(CardInDeckPref, Vector3.zero,Quaternion.identity, DeckGameObject.transform);
+        GameObject newCardInDeck = Instantiate(_cardInDeckPref, Vector3.zero, Quaternion.identity, _deckGameObject.transform);
         newCardInDeck.transform.position = new Vector3(0, 0, 100);
 
         ClickCardOnDeckBuild click = newCardInDeck.AddComponent<ClickCardOnDeckBuild>();
@@ -97,51 +97,51 @@ public class DeckBuildManager : MonoBehaviour
         cardInDeck.Name.text = card.Name.text + ": " + card.SecondName.text;
         cardInDeck.Points.text = card.Point.text;
 
-        Deck.Add(card.SelfCard);
+        _deck.Add(card.SelfCard);
 
-        float height = (DeckGameObject.transform.childCount * CardInDeckPref.GetComponent<RectTransform>().sizeDelta.y + DeckGameObject.transform.childCount * 5) - 1065 + 100; 
+        float height = (_deckGameObject.transform.childCount * _cardInDeckPref.GetComponent<RectTransform>().sizeDelta.y + _deckGameObject.transform.childCount * 5) - 1065 + 100;
 
         if (height > 0)
-            DeckGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(DeckGameObject.GetComponent<RectTransform>().sizeDelta.x, height);
+            _deckGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(_deckGameObject.GetComponent<RectTransform>().sizeDelta.x, height);
 
         CardSound(card);
     }
 
-    public void RemoveCard(CardInfoScript card, GameObject cardInDeck) 
+    public void RemoveCard(CardInfoScript card, GameObject cardInDeck)
     {
-        CountCardInDeck--;
+        _countCardInDeck--;
         ChangeCountCard();
 
-        Deck.Remove(card.SelfCard);
+        _deck.Remove(card.SelfCard);
         card.GetComponent<ClickCardOnDeckBuild>().IsInDeck = false;
 
         Destroy(cardInDeck);
 
-        float height = DeckGameObject.transform.childCount * CardInDeckPref.GetComponent<RectTransform>().sizeDelta.y + DeckGameObject.transform.childCount * 5 - 1065 + 100;
+        float height = _deckGameObject.transform.childCount * _cardInDeckPref.GetComponent<RectTransform>().sizeDelta.y + _deckGameObject.transform.childCount * 5 - 1065 + 100;
 
         if (height > 0)
-            DeckGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(DeckGameObject.GetComponent<RectTransform>().sizeDelta.x, height);
+            _deckGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(_deckGameObject.GetComponent<RectTransform>().sizeDelta.x, height);
     }
 
     public void StartGame()
     {
-        if (CountCardInDeck == NeedCountCardInDeck)
+        if (_countCardInDeck == _needCountCardInDeck)
         {
-            DeckManager.Instance.SetDeck(Deck);
+            DeckManager.Instance.SetDeck(_deck);
             SceneManager.LoadScene("Game");
         }
     }
 
     public void RandomDeck()
     {
-        RandomDeckList = new List<CardInfoScript>(CardInfoDeckList);
-        int currentCardInDeck = CountCardInDeck;
+        _randomDeckList = new List<CardInfoScript>(_cardInfoDeckList);
+        int currentCardInDeck = _countCardInDeck;
 
         List<CardInfoScript> removeCards = new List<CardInfoScript>();
 
-        foreach (CardInfoScript card in RandomDeckList)
+        foreach (CardInfoScript card in _randomDeckList)
         {
-            if (Deck.Contains(card.SelfCard))
+            if (_deck.Contains(card.SelfCard))
             {
                 removeCards.Add(card);
             }
@@ -149,21 +149,21 @@ public class DeckBuildManager : MonoBehaviour
 
         foreach (CardInfoScript card in removeCards)
         {
-            RandomDeckList.Remove(card);
+            _randomDeckList.Remove(card);
         }
 
-        for (int i = 0; i < NeedCountCardInDeck - currentCardInDeck; i++)
+        for (int i = 0; i < _needCountCardInDeck - currentCardInDeck; i++)
         {
-            int random = Random.Range(0, RandomDeckList.Count);
-            CardInfoScript newCard = RandomDeckList[random];
+            int random = Random.Range(0, _randomDeckList.Count);
+            CardInfoScript newCard = _randomDeckList[random];
 
             AddCard(newCard);
-            RandomDeckList.Remove(newCard);
+            _randomDeckList.Remove(newCard);
         }
 
-        foreach (CardInfoScript card in CardInfoDeckList)
+        foreach (CardInfoScript card in _cardInfoDeckList)
         {
-            if (Deck.Contains(card.SelfCard))
+            if (_deck.Contains(card.SelfCard))
             {
                 card.GetComponent<ClickCardOnDeckBuild>().CardInDeck(card);
             }
@@ -177,39 +177,39 @@ public class DeckBuildManager : MonoBehaviour
 
     public void ClearDeck()
     {
-        CountCardInDeck = 0;
+        _countCardInDeck = 0;
         ChangeCountCard();
 
-        for (int i = DeckGameObject.transform.childCount - 1; i >= 0; i--)
+        for (int i = _deckGameObject.transform.childCount - 1; i >= 0; i--)
         {
-            DeckGameObject.transform.GetChild(i).GetComponent<ClickCardOnDeckBuild>().CardRemoveFromDeck(DeckGameObject.transform.GetChild(i).GetComponent<ClickCardOnDeckBuild>().CardInfoScript);
-            Destroy(DeckGameObject.transform.GetChild(i).gameObject);
+            _deckGameObject.transform.GetChild(i).GetComponent<ClickCardOnDeckBuild>().CardRemoveFromDeck(_deckGameObject.transform.GetChild(i).GetComponent<ClickCardOnDeckBuild>().CardInfoScript);
+            Destroy(_deckGameObject.transform.GetChild(i).gameObject);
         }
 
-        Deck.Clear();
+        _deck.Clear();
 
-        DeckGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(DeckGameObject.GetComponent<RectTransform>().sizeDelta.x, 1075);
+        _deckGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(_deckGameObject.GetComponent<RectTransform>().sizeDelta.x, 1075);
     }
 
     private void ChangeCountCard()
     {
-        CountCard.text = CountCardInDeck.ToString();
+        _countCard.text = _countCardInDeck.ToString();
 
-        if (CountCardInDeck != NeedCountCardInDeck)
+        if (_countCardInDeck != _needCountCardInDeck)
         {
-            CountCard.color = Color.red;
+            _countCard.color = Color.red;
         }
 
         else
-            CountCard.color = Color.green;
+            _countCard.color = Color.green;
     }
 
     private void CardSound(CardInfoScript card)
     {
-        AudioSourceVoice.clip = Resources.Load<AudioClip>("Sounds/Cards/Deployment/" + card.SelfCard.BaseCard.Name + Random.Range(0, 6));
-        AudioSourceVoice.Play();
+        _audioSourceVoice.clip = Resources.Load<AudioClip>("Sounds/Cards/Deployment/" + card.SelfCard.BaseCard.Name + Random.Range(0, 6));
+        _audioSourceVoice.Play();
 
-        AudioSourceEffects.clip = card.SelfCard.BaseCard.CardPlaySound;
-        AudioSourceEffects.Play();
+        _audioSourceEffects.clip = card.SelfCard.BaseCard.CardPlaySound;
+        _audioSourceEffects.Play();
     }
 }

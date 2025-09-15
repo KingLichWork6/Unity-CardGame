@@ -11,6 +11,16 @@ public class LocalizedText : MonoBehaviour
 
     private TextMeshProUGUI _text;
 
+    private void OnEnable()
+    {
+        SettingsPanel.ChangeLanguage += UpdateText;
+    }
+
+    private void OnDisable()
+    {
+        SettingsPanel.ChangeLanguage -= UpdateText;
+    }
+
     private void Awake()
     {
         _text = GetComponent<TextMeshProUGUI>();
@@ -18,7 +28,7 @@ public class LocalizedText : MonoBehaviour
 
     private void Start()
     {
-        if(LocalizationManager.Instance.Language == "en" || _isIdentically)
+        if (LocalizationManager.Instance.Language == "en" || _isIdentically)
             _text.text = _en;
         else if (LocalizationManager.Instance.Language == "ru")
             _text.text = _ru;

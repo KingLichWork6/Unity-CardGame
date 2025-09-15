@@ -1,227 +1,5 @@
-using System.Collections.Generic;
+п»їusing System.Collections.Generic;
 using UnityEngine;
-
-public struct BaseCard
-{
-    public string Name;
-    public string AbilityName;
-
-    public string DescriptionEng;
-    public string DescriptionRu;
-    public string DescriptionUk;
-
-    public int MaxPoints;
-    public int Points;
-
-    public Texture ImageTexture;
-    public Sprite Sprite;
-
-    public AudioClip CardPlaySound;
-    public AudioClip CardTimerSound;
-    public Color ColorTheme;
-
-    public bool isDestroyed;
-    public int ArmorPoints;
-}
-
-public struct BoostOrDamage
-{
-    public int Boost;
-    public int NearBoost;
-    public int ChangeNearBoost;
-    public int SelfBoost;
-
-    public int Damage;
-    public int NearDamage;
-    public int ChangeNearDamage;
-    public int SelfDamage;
-
-    public bool AddictionWithAlliedField;
-    public bool AddictionWithEnemyField;
-}
-
-public struct EndTurnActions
-{
-    public int EndTurnActionCount;
-
-    public int EndTurnRandomBoost;
-    public int EndTurnRandomDamage;
-
-    public int EndTurnSelfBoost;
-    public int EndTurnSelfDamage;
-
-    public int EndTurnNearBoost;
-    public int EndTurnNearDamage;
-
-    public int Timer;
-    public bool TimerNoMoreActions;
-
-    public int ArmorOther;
-}
-
-public struct Spawns
-{
-    public int SpawnCardNumber;
-    public int SpawnCardCount;
-}
-
-public struct DrawCard
-{
-    public int DrawCardCount;
-}
-
-public struct StatusEffects
-{
-    public bool IsShieldOther;
-    public bool IsIllusion;
-    public bool IsInvisibility;
-    public bool IsStunOther;
-    public bool IsInvulnerability;
-
-    public bool IsSelfShielded;
-    public bool IsSelfStunned;
-
-    public int EnduranceOrBleedingOther;
-    public int SelfEnduranceOrBleeding;
-    public bool IsEnemyTargetEnduranceOrBleeding;
-}
-
-public struct UniqueMechanics
-{
-    public int DestroyCardPoints;
-
-    public bool SwapPoints;
-
-    public int TransformationNumber;
-
-    public int ReturnDamageValue;
-
-    public int HealDamageValue;
-}
-
-
-public struct Card
-{
-    public BaseCard BaseCard;
-    public BoostOrDamage BoostOrDamage;
-    public EndTurnActions EndTurnActions;
-    public Spawns Spawns;
-    public DrawCard DrawCard;
-    public UniqueMechanics UniqueMechanics;
-    public StatusEffects StatusEffects;
-
-    public Card(string name, string secondName, string descriptionEng, string descriptionRu, string descriptionUk, string spritePath, string startOrderSoundPath, Color color, int maxPoints, int points, string timerSoundPath = null, int armor = 0,
-
-        int boost = 0, int rangeBoost = 0, int changeBoost = 0, int damage = 0, int nearDamage = 0, int changeDamage = 0, 
-        int selfBoost = 0, int selfDamage = 0, bool addictionWithSelfField = false, bool addictionWithEnemyField = false,
-
-        int endTurnCount = 0, int endTurnRandomBoost = 0, int endTurnRandomDamage = 0, 
-        int endTurnSelfBoost = 0, int endTurnSelfDamage = 0, int endTurnNearBoost = 0, int endTurnNearDamage = 0, int timer = 0, bool timerEndTurnNoMoreAction = false, int armorOther = 0,
-
-        int spawnCardCount = 0, int spawnCardNumber = 0, 
-
-        int drawCardCount = 0,
-
-        bool shieldOther = false, bool stunOther = false, bool invisibility = false, bool invulnerability = false, bool isSelfShielded = false,
-        int enduranceOrBleedingSelf = 0, int enduranceOrBleedingOther = 0, bool isEnemyTargetEnduranceOrBleeding = false,
-
-        int destroyCardPoints = 0, bool swapPoints = false, int transformationNumber = -1, int returnDamageValue = 0, int healDamageValue = 0)
-
-    {
-
-        BaseCard = new BaseCard
-        {
-            Name = name,
-            AbilityName = secondName,
-
-            DescriptionEng = descriptionEng,
-            DescriptionRu = descriptionRu,
-            DescriptionUk = descriptionUk,
-
-            MaxPoints = maxPoints,
-            Points = points,
-
-            ImageTexture = Resources.Load<Texture>(spritePath),
-            Sprite = Resources.Load<Sprite>(spritePath),
-
-            CardPlaySound = Resources.Load<AudioClip>(startOrderSoundPath),
-            CardTimerSound = Resources.Load<AudioClip>(timerSoundPath),
-            ColorTheme = color,
-            ArmorPoints = armor
-        };
-
-
-        BoostOrDamage = new BoostOrDamage
-        {
-            Boost = boost,
-            NearBoost = rangeBoost,
-            ChangeNearBoost = changeBoost,
-            SelfBoost = selfBoost,
-
-            Damage = damage,
-            NearDamage = nearDamage,
-            ChangeNearDamage = changeDamage,
-            SelfDamage = selfDamage,
-
-            AddictionWithAlliedField = addictionWithSelfField,
-            AddictionWithEnemyField = addictionWithEnemyField
-        };
-
-
-        EndTurnActions = new EndTurnActions
-        {
-            EndTurnActionCount = endTurnCount,
-            EndTurnRandomDamage = endTurnRandomDamage,
-            EndTurnRandomBoost = endTurnRandomBoost,
-
-            EndTurnSelfBoost = endTurnSelfBoost,
-            EndTurnSelfDamage = endTurnSelfDamage,
-            EndTurnNearBoost = endTurnNearBoost,
-            EndTurnNearDamage = endTurnNearDamage,
-            Timer = timer,
-            TimerNoMoreActions = timerEndTurnNoMoreAction,
-
-            ArmorOther = armorOther
-        };
-
-
-        Spawns = new Spawns
-        {
-            SpawnCardNumber = spawnCardNumber,
-            SpawnCardCount = spawnCardCount
-        };
-
-
-        DrawCard = new DrawCard
-        {
-            DrawCardCount = drawCardCount
-        };
-
-
-        StatusEffects = new StatusEffects
-        {
-            IsShieldOther = shieldOther,
-            IsStunOther = stunOther,
-            IsInvisibility = invisibility,
-            IsInvulnerability = invulnerability,
-            IsSelfShielded = isSelfShielded,
-
-            SelfEnduranceOrBleeding = enduranceOrBleedingSelf,
-            EnduranceOrBleedingOther = enduranceOrBleedingOther,
-            IsEnemyTargetEnduranceOrBleeding = isEnemyTargetEnduranceOrBleeding
-        };
-
-
-        UniqueMechanics = new UniqueMechanics
-        {
-            DestroyCardPoints = destroyCardPoints,
-            SwapPoints = swapPoints,
-            TransformationNumber = transformationNumber,
-            ReturnDamageValue = returnDamageValue,
-            HealDamageValue = healDamageValue
-        };
-    }
-}
 
 public static class CardManagerList
 {
@@ -248,334 +26,334 @@ public class CardManager : MonoBehaviour
 
             //Game
 
-            CardManagerList.AllCards.Add(new Card("Lina", "Dragon Slave", "<color=red>Damage</color> 3 near enemy unit by 3.", 
-                "Нанесите 3 <color=red>урона</color> 3 рядом стоящим вражеским отрядам.", 
-                "Нанесіть 3 <color=red>шкоди</color> 3 поруч ворожим загонам, що стоять поруч.",
+            CardManagerList.AllCards.Add(new Card("Lina", "Dragon Slave", "<color=red>Damage</color> 3 near enemy unit by 3.",
+                "РќР°РЅРµСЃРёС‚Рµ 3 <color=red>СѓСЂРѕРЅР°</color> 3 СЂСЏРґРѕРј СЃС‚РѕСЏС‰РёРј РІСЂР°Р¶РµСЃРєРёРј РѕС‚СЂСЏРґР°Рј.",
+                "РќР°РЅРµСЃС–С‚СЊ 3 <color=red>С€РєРѕРґРё</color> 3 РїРѕСЂСѓС‡ РІРѕСЂРѕР¶РёРј Р·Р°РіРѕРЅР°Рј, С‰Рѕ СЃС‚РѕСЏС‚СЊ РїРѕСЂСѓС‡.",
                 "Sprites/Cards/Lina1", "Sounds/Cards/StartOrder/LinaDragonSlave", Color.red,
-                5, 5, damage:3, nearDamage: 1)); //14
+                5, 5, damage: 3, nearDamage: 1)); //14
 
             CardManagerList.AllCards.Add(new Card("Lina", "Light Strike Array", "<color=red>Damage</color> enemy unit by 3 and <color=yellow>stun</color> its.",
-                "Нанесите 3 <color=red>урона</color> вражескому отряду и <color=yellow>оглушите</color> его.",
-                "Завдайте 3 <color=red>шкоди</color> ворожій одиниці і <color=yellow>зашокируйте</color> її.",
+                "РќР°РЅРµСЃРёС‚Рµ 3 <color=red>СѓСЂРѕРЅР°</color> РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ Рё <color=yellow>РѕРіР»СѓС€РёС‚Рµ</color> РµРіРѕ.",
+                "Р—Р°РІРґР°Р№С‚Рµ 3 <color=red>С€РєРѕРґРё</color> РІРѕСЂРѕР¶С–Р№ РѕРґРёРЅРёС†С– С– <color=yellow>Р·Р°С€РѕРєРёСЂСѓР№С‚Рµ</color> С—С—.",
                 "Sprites/Cards/Lina2", "Sounds/Cards/StartOrder/LinaLightStrikeArray", Color.red,
                 6, 6, damage: 3, stunOther: true)); //9 + stun
 
             CardManagerList.AllCards.Add(new Card("Lina", "Fiery Soul", "At the end of the your turn, deal 1 <color=red>damage</color> to a random enemy unit, repeat 3 <color=red>times</color>.",
-                "В конце вашего хода нанесите 1 <color=red>урон</color> случайной вражеской единице, повторите 3 <color=red>раза</color>.",
-                "В кінці вашого ходу завдайте 1 <color=red>шкоду</color> випадковій ворожій одиниці, повторіть 3 <color=red>рази</color>.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРµСЃРёС‚Рµ 1 <color=red>СѓСЂРѕРЅ</color> СЃР»СѓС‡Р°Р№РЅРѕР№ РІСЂР°Р¶РµСЃРєРѕР№ РµРґРёРЅРёС†Рµ, РїРѕРІС‚РѕСЂРёС‚Рµ 3 <color=red>СЂР°Р·Р°</color>.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ 1 <color=red>С€РєРѕРґСѓ</color> РІРёРїР°РґРєРѕРІС–Р№ РІРѕСЂРѕР¶С–Р№ РѕРґРёРЅРёС†С–, РїРѕРІС‚РѕСЂС–С‚СЊ 3 <color=red>СЂР°Р·Рё</color>.",
                 "Sprites/Cards/Lina3", "Sounds/Cards/StartOrder/LinaFierySoul", Color.red,
                 2, 2, endTurnCount: 3, endTurnRandomDamage: 1)); //2 + 3 at end turn
 
             CardManagerList.AllCards.Add(new Card("Lina", "Laguna Blade", "<color=red>Destroy</color> an enemy unit.",
-                "<color=red>Уничтожьте</color> вражеский отряд.",
-                "<color=red>Знищте</color> ворожий загін.",
+                "<color=red>РЈРЅРёС‡С‚РѕР¶СЊС‚Рµ</color> РІСЂР°Р¶РµСЃРєРёР№ РѕС‚СЂСЏРґ.",
+                "<color=red>Р—РЅРёС‰С‚Рµ</color> РІРѕСЂРѕР¶РёР№ Р·Р°РіС–РЅ.",
                 "Sprites/Cards/Lina4", "Sounds/Cards/StartOrder/LinaLagunaBlade", Color.red,
                 1, 1, destroyCardPoints: -1)); //1 + destroy
 
             CardManagerList.AllCards.Add(new Card("Luna", "Lucent Beam", "<color=red>Damage</color> enemy unit by 2 and <color=yellow>stun</color> it.",
-                "Нанесите 2 <color=red>урона</color> вражескому отряду и <color=yellow>оглушите</color> ее.",
-                "Завдайте 2 <color=red>шкоди</color> ворожиму загіну і <color=yellow>зашокируйте</color> її.",
+                "РќР°РЅРµСЃРёС‚Рµ 2 <color=red>СѓСЂРѕРЅР°</color> РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ Рё <color=yellow>РѕРіР»СѓС€РёС‚Рµ</color> РµРµ.",
+                "Р—Р°РІРґР°Р№С‚Рµ 2 <color=red>С€РєРѕРґРё</color> РІРѕСЂРѕР¶РёРјСѓ Р·Р°РіС–РЅСѓ С– <color=yellow>Р·Р°С€РѕРєРёСЂСѓР№С‚Рµ</color> С—С—.",
                 "Sprites/Cards/Luna1", "Sounds/Cards/StartOrder/LunaLucentBeam", Color.blue,
                 7, 7, damage: 2, stunOther: true)); //9 + stun
 
             CardManagerList.AllCards.Add(new Card("Luna", "Moon Glaives", "At the end of the your turn, deal 1 <color=red>damage</color> to a random enemy unit, repeat 2 <color=red>times</color>.",
-                "В конце вашего хода нанесите 1 <color=red>урон</color> случайному вражескому отряду, повторите 2 <color=red>раза</color>.",
-                "В кінці вашого ходу завдайте 1 <color=red>шкоду</color> випадковому ворожому загіну, повторіть 2 <color=red>рази</color>.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРµСЃРёС‚Рµ 1 <color=red>СѓСЂРѕРЅ</color> СЃР»СѓС‡Р°Р№РЅРѕРјСѓ РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ, РїРѕРІС‚РѕСЂРёС‚Рµ 2 <color=red>СЂР°Р·Р°</color>.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ 1 <color=red>С€РєРѕРґСѓ</color> РІРёРїР°РґРєРѕРІРѕРјСѓ РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіС–РЅСѓ, РїРѕРІС‚РѕСЂС–С‚СЊ 2 <color=red>СЂР°Р·Рё</color>.",
                 "Sprites/Cards/Luna2", "Sounds/Cards/StartOrder/LunaMoonGlaives", Color.blue,
-                5, 5, armor:2, endTurnCount: 2, endTurnRandomDamage: 1)); //5 + 2 end turn
+                5, 5, armor: 2, endTurnCount: 2, endTurnRandomDamage: 1)); //5 + 2 end turn
 
             CardManagerList.AllCards.Add(new Card("Luna", "Eclipse", "<color=red>Damage</color> 5 near enemy units by 2.",
-                "Нанесите 2 <color=red>урона</color> 5 вражеским отрядам, находящимся рядом.",
-                "Завдайте 2 <color=red>шкоди</color> 5 ворожим загінам поруч.",
+                "РќР°РЅРµСЃРёС‚Рµ 2 <color=red>СѓСЂРѕРЅР°</color> 5 РІСЂР°Р¶РµСЃРєРёРј РѕС‚СЂСЏРґР°Рј, РЅР°С…РѕРґСЏС‰РёРјСЃСЏ СЂСЏРґРѕРј.",
+                "Р—Р°РІРґР°Р№С‚Рµ 2 <color=red>С€РєРѕРґРё</color> 5 РІРѕСЂРѕР¶РёРј Р·Р°РіС–РЅР°Рј РїРѕСЂСѓС‡.",
                 "Sprites/Cards/Luna3", "Sounds/Cards/StartOrder/LunaEclipse", Color.blue,
                 7, 7, damage: 2, nearDamage: 2)); // 17
 
             CardManagerList.AllCards.Add(new Card("Templar Assasin", "Refraction", "<color=green>Boost</color> allied unit by 8. <color=red>Shield</color>.",
-                "<color=green>Усильте</color> союзный отряд на 8. <color=red>Щит</color>.",
-                "<color=green>Підсильте</color> союзний загін на 8. <color=red>Щит</color>.",
+                "<color=green>РЈСЃРёР»СЊС‚Рµ</color> СЃРѕСЋР·РЅС‹Р№ РѕС‚СЂСЏРґ РЅР° 8. <color=red>Р©РёС‚</color>.",
+                "<color=green>РџС–РґСЃРёР»СЊС‚Рµ</color> СЃРѕСЋР·РЅРёР№ Р·Р°РіС–РЅ РЅР° 8. <color=red>Р©РёС‚</color>.",
                 "Sprites/Cards/TemplarAssasin1", "Sounds/Cards/StartOrder/TemplarAssasinRefraction", Color.magenta,
                 3, 3, boost: 8, isSelfShielded: true)); // 11 + selfShield
 
             CardManagerList.AllCards.Add(new Card("Templar Assasin", "Meld", "<color=red>Damage</color> enemy unit by 5. <color=red>Shield</color>.",
-                "Нанесите 5 <color=red>урона</color> вражескому отряду. <color=red>Щит</color>.",
-                "Завдайте 5 <color=red>шкоди</color> ворожому загіну. <color=red>Щит</color>.",
+                "РќР°РЅРµСЃРёС‚Рµ 5 <color=red>СѓСЂРѕРЅР°</color> РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ. <color=red>Р©РёС‚</color>.",
+                "Р—Р°РІРґР°Р№С‚Рµ 5 <color=red>С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіС–РЅСѓ. <color=red>Р©РёС‚</color>.",
                 "Sprites/Cards/TemplarAssasin2", "Sounds/Cards/StartOrder/TemplarAssasinMeld", Color.magenta,
                 7, 7, damage: 5, isSelfShielded: true)); // 12 + selfShield
 
             CardManagerList.AllCards.Add(new Card("Axe", "Berserker's Call", "<color=green>Boost</color> enemy unit by 3.",
-                "<color=green>Усильте</color> вражеский отряд на 3.",
-                "<color=green>Підсильте</color> союзний загін на 3.",
+                "<color=green>РЈСЃРёР»СЊС‚Рµ</color> РІСЂР°Р¶РµСЃРєРёР№ РѕС‚СЂСЏРґ РЅР° 3.",
+                "<color=green>РџС–РґСЃРёР»СЊС‚Рµ</color> СЃРѕСЋР·РЅРёР№ Р·Р°РіС–РЅ РЅР° 3.",
                 "Sprites/Cards/Axe1", "Sounds/Cards/StartOrder/AxeBerserker'sCall", Color.red,
                 14, 13, armor: 6, damage: -3)); // 10
 
             CardManagerList.AllCards.Add(new Card("Axe", "Culling Blade", "<color=red>Destroy</color> an enemy unit with 4 or less points.",
-                "<color=red>Уничтожьте</color> вражеский отряд с 4 или менее очками.",
-                "<color=red>Знищте</color> ворожий загін з 4 або менше очками.",
+                "<color=red>РЈРЅРёС‡С‚РѕР¶СЊС‚Рµ</color> РІСЂР°Р¶РµСЃРєРёР№ РѕС‚СЂСЏРґ СЃ 4 РёР»Рё РјРµРЅРµРµ РѕС‡РєР°РјРё.",
+                "<color=red>Р—РЅРёС‰С‚Рµ</color> РІРѕСЂРѕР¶РёР№ Р·Р°РіС–РЅ Р· 4 Р°Р±Рѕ РјРµРЅС€Рµ РѕС‡РєР°РјРё.",
                 "Sprites/Cards/Axe3", "Sounds/Cards/StartOrder/AxeCullingBlade", Color.red,
                 14, 13, armor: 2, destroyCardPoints: 4)); // 13 + 4
 
             CardManagerList.AllCards.Add(new Card("Centaur Warrunner", "Double Edge", "<color=red>Damage</color> self by 5.",
-                "Нанесите себе 5 <color=red>урона</color>.",
-                "Завдайте собі 5 <color=red>шкоди</color>.",
+                "РќР°РЅРµСЃРёС‚Рµ СЃРµР±Рµ 5 <color=red>СѓСЂРѕРЅР°</color>.",
+                "Р—Р°РІРґР°Р№С‚Рµ СЃРѕР±С– 5 <color=red>С€РєРѕРґРё</color>.",
                 "Sprites/Cards/Centaur1", "Sounds/Cards/StartOrder/CentaurDoubleEdge", Color.gray,
                 20, 16, armor: 2, selfDamage: 5)); //13
 
             CardManagerList.AllCards.Add(new Card("Centaur Warrunner", "Retaliate", "Whenever this unit takes damage, damage to the card that dealt 1 damage",
-                "Каждый раз, когда этот отряд получает урон, нанесите 1 <color=red>урон</color> карте, которая нанесла урон.",
-                "Щоразу, коли цей загін отримує шкоду, завдайте 1 <color=red>шкоду</color> карті, яка завдала шкоду.",
+                "РљР°Р¶РґС‹Р№ СЂР°Р·, РєРѕРіРґР° СЌС‚РѕС‚ РѕС‚СЂСЏРґ РїРѕР»СѓС‡Р°РµС‚ СѓСЂРѕРЅ, РЅР°РЅРµСЃРёС‚Рµ 1 <color=red>СѓСЂРѕРЅ</color> РєР°СЂС‚Рµ, РєРѕС‚РѕСЂР°СЏ РЅР°РЅРµСЃР»Р° СѓСЂРѕРЅ.",
+                "Р©РѕСЂР°Р·Сѓ, РєРѕР»Рё С†РµР№ Р·Р°РіС–РЅ РѕС‚СЂРёРјСѓС” С€РєРѕРґСѓ, Р·Р°РІРґР°Р№С‚Рµ 1 <color=red>С€РєРѕРґСѓ</color> РєР°СЂС‚С–, СЏРєР° Р·Р°РІРґР°Р»Р° С€РєРѕРґСѓ.",
                 "Sprites/Cards/Centaur2", "Sounds/Cards/StartOrder/CentaurRetaliate", Color.gray,
                 10, 8, armor: 6, returnDamageValue: 1)); //8
 
             CardManagerList.AllCards.Add(new Card("Huskar", "Life Break", "<color=red>Damage</color> self and enemy unit by 7.",
-                "Нанесите себе и вражескому отряду по 7 <color=red>урона</color>.",
-                "Завдайте собі і ворожому загіну по 7 <color=red>шкоди</color>.",
+                "РќР°РЅРµСЃРёС‚Рµ СЃРµР±Рµ Рё РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ РїРѕ 7 <color=red>СѓСЂРѕРЅР°</color>.",
+                "Р—Р°РІРґР°Р№С‚Рµ СЃРѕР±С– С– РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіС–РЅСѓ РїРѕ 7 <color=red>С€РєРѕРґРё</color>.",
                 "Sprites/Cards/Huskar1", "Sounds/Cards/StartOrder/HuskarLifeBreak", Color.yellow,
                 19, 15, damage: 7, selfDamage: 7, addictionWithEnemyField: true)); //15
 
             CardManagerList.AllCards.Add(new Card("Huskar", "Burning Spear", "At the end of the your turn, deal 1 <color=red>damage</color> to a random enemy unit and self, repeat 2 <color=red>times</color>.",
-                "В конце вашего хода нанесите 1 <color=red>урон</color> случайному вражескому отряду и себе, повторите 2 <color=red>раза</color>.",
-                "В кінці вашого ходу завдайте 1 <color=red>шкоду</color> випадковому ворожому загіну i собi, повторіть 2 <color=red>рази</color>.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРµСЃРёС‚Рµ 1 <color=red>СѓСЂРѕРЅ</color> СЃР»СѓС‡Р°Р№РЅРѕРјСѓ РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ Рё СЃРµР±Рµ, РїРѕРІС‚РѕСЂРёС‚Рµ 2 <color=red>СЂР°Р·Р°</color>.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ 1 <color=red>С€РєРѕРґСѓ</color> РІРёРїР°РґРєРѕРІРѕРјСѓ РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіС–РЅСѓ i СЃРѕР±i, РїРѕРІС‚РѕСЂС–С‚СЊ 2 <color=red>СЂР°Р·Рё</color>.",
                 "Sprites/Cards/Huskar2", "Sounds/Cards/StartOrder/HuskarBurningSpear", Color.yellow,
-                6, 6, armor:4 ,endTurnCount: 2, endTurnSelfDamage:1, endTurnRandomDamage: 1)); //6 + 2 end turn
+                6, 6, armor: 4, endTurnCount: 2, endTurnSelfDamage: 1, endTurnRandomDamage: 1)); //6 + 2 end turn
 
             CardManagerList.AllCards.Add(new Card("Huskar", "Berserkers Blood", "At the end of the your turn, <color=red>boost</color> self by 1, repeat 1 <color=red>times</color>.",
-                "<color=red>Увеличьте</color> себя на 1 в конце вашего хода, повторите 1 <color=red>раз</color>.",
-                "<color=red>Збільшіть</color> себе на 1 в кінці вашого ходу, повторіть 1 <color=red>раз</color>.",
+                "<color=red>РЈРІРµР»РёС‡СЊС‚Рµ</color> СЃРµР±СЏ РЅР° 1 РІ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР°, РїРѕРІС‚РѕСЂРёС‚Рµ 1 <color=red>СЂР°Р·</color>.",
+                "<color=red>Р—Р±С–Р»СЊС€С–С‚СЊ</color> СЃРµР±Рµ РЅР° 1 РІ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ, РїРѕРІС‚РѕСЂС–С‚СЊ 1 <color=red>СЂР°Р·</color>.",
                 "Sprites/Cards/Huskar3", "Sounds/Cards/StartOrder/BerserkersBlood", Color.yellow,
                 19, 6, endTurnCount: 1, endTurnSelfBoost: 1)); //6 + 1 end turn
 
             CardManagerList.AllCards.Add(new Card("Windranger", "Powershot", "<color=red>Damage</color> enemy unit by 5 and units near by 1.",
-                "<color=red>Повредите</color> вражеский отряд на 5 и отряды рядом на 1.",
-                "<color=red>Завдайте шкоди</color> ворожому загону на 5 і загону поруч на 1.",
+                "<color=red>РџРѕРІСЂРµРґРёС‚Рµ</color> РІСЂР°Р¶РµСЃРєРёР№ РѕС‚СЂСЏРґ РЅР° 5 Рё РѕС‚СЂСЏРґС‹ СЂСЏРґРѕРј РЅР° 1.",
+                "<color=red>Р—Р°РІРґР°Р№С‚Рµ С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ РЅР° 5 С– Р·Р°РіРѕРЅСѓ РїРѕСЂСѓС‡ РЅР° 1.",
                 "Sprites/Cards/Windranger1", "Sounds/Cards/StartOrder/WindrangerPowershot", Color.green,
                 4, 4, damage: 5, nearDamage: 1, changeDamage: -4)); // 11
 
             CardManagerList.AllCards.Add(new Card("Windranger", "Windrun", "<color=red>Draw</color> 1 card",
-                "<color=red>Возьмите</color> 1 карту",
-                "<color=red>Візьміть</color> 1 карту",
+                "<color=red>Р’РѕР·СЊРјРёС‚Рµ</color> 1 РєР°СЂС‚Сѓ",
+                "<color=red>Р’С–Р·СЊРјС–С‚СЊ</color> 1 РєР°СЂС‚Сѓ",
                 "Sprites/Cards/Windranger2", "Sounds/Cards/StartOrder/WindrangerWindrun", Color.green,
                 3, 3, drawCardCount: 1)); // 3 + card
 
             CardManagerList.AllCards.Add(new Card("Kunkka", "Tidebringer", "<color=red>Damage</color> enemy unit by 1, and units near by 5.",
-                "<color=red>Повредите</color> вражеский отряд на 1, и отряды рядом на 5.",
-                "<color=red>Завдайте шкоди</color> ворожому загону на 1 і загону поруч на 5.",
+                "<color=red>РџРѕРІСЂРµРґРёС‚Рµ</color> РІСЂР°Р¶РµСЃРєРёР№ РѕС‚СЂСЏРґ РЅР° 1, Рё РѕС‚СЂСЏРґС‹ СЂСЏРґРѕРј РЅР° 5.",
+                "<color=red>Р—Р°РІРґР°Р№С‚Рµ С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ РЅР° 1 С– Р·Р°РіРѕРЅСѓ РїРѕСЂСѓС‡ РЅР° 5.",
                 "Sprites/Cards/Kunkka1", "Sounds/Cards/StartOrder/KunkkaTidebringer", Color.blue,
                 5, 5, damage: 1, nearDamage: 5, changeDamage: 4)); // 16
 
             CardManagerList.AllCards.Add(new Card("Kunkka", "Ghost Ship", "<color=blue>Spawn</color> Ghost Ship to the left of this unit.",
-                "<color=blue>Призовите</color> Призрачный Корабль слева от этого отряда.",
-                "<color=blue>Закличте</color> Примарський Корабель ліворуч від цього загону.",
+                "<color=blue>РџСЂРёР·РѕРІРёС‚Рµ</color> РџСЂРёР·СЂР°С‡РЅС‹Р№ РљРѕСЂР°Р±Р»СЊ СЃР»РµРІР° РѕС‚ СЌС‚РѕРіРѕ РѕС‚СЂСЏРґР°.",
+                "<color=blue>Р—Р°РєР»РёС‡С‚Рµ</color> РџСЂРёРјР°СЂСЃСЊРєРёР№ РљРѕСЂР°Р±РµР»СЊ Р»С–РІРѕСЂСѓС‡ РІС–Рґ С†СЊРѕРіРѕ Р·Р°РіРѕРЅСѓ.",
                 "Sprites/Cards/Kunkka2", "Sounds/Cards/StartOrder/KunkkaGhostShip", Color.blue,
                 7, 7, spawnCardCount: 1, spawnCardNumber: 2)); // 12 + 1 end turn
 
             CardManagerList.AllCards.Add(new Card("Earthshaker", "Fissure", "<color=red>Damage</color> enemy unit by 3 and near by 2, then <color=yellow>stun</color> them.",
-                "<color=red>Повредите</color> вражеский отряд на 3 и отряды рядом на 2, затем <color=yellow>оглушите</color> их.",
-                "<color=red>Завдайте шкоди</color> ворожому загону на 3 і загону поруч на 2, потім <color=yellow>стуньте</color> їх.",
+                "<color=red>РџРѕРІСЂРµРґРёС‚Рµ</color> РІСЂР°Р¶РµСЃРєРёР№ РѕС‚СЂСЏРґ РЅР° 3 Рё РѕС‚СЂСЏРґС‹ СЂСЏРґРѕРј РЅР° 2, Р·Р°С‚РµРј <color=yellow>РѕРіР»СѓС€РёС‚Рµ</color> РёС….",
+                "<color=red>Р—Р°РІРґР°Р№С‚Рµ С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ РЅР° 3 С– Р·Р°РіРѕРЅСѓ РїРѕСЂСѓС‡ РЅР° 2, РїРѕС‚С–Рј <color=yellow>СЃС‚СѓРЅСЊС‚Рµ</color> С—С….",
                 "Sprites/Cards/Earthshaker1", "Sounds/Cards/StartOrder/EarthshakerFissure", Color.yellow,
                 6, 6, damage: 3, nearDamage: 2, changeDamage: -1, stunOther: true)); //13
 
             CardManagerList.AllCards.Add(new Card("Earthshaker", "Echo Slam", "<color=red>Damage</color> all enemy units by 2.",
-                "<color=red>Повредите</color> все вражеские отряды на 2.",
-                "<color=red>Завдайте шкоди</color> всім ворожим загонам на 2.",
+                "<color=red>РџРѕРІСЂРµРґРёС‚Рµ</color> РІСЃРµ РІСЂР°Р¶РµСЃРєРёРµ РѕС‚СЂСЏРґС‹ РЅР° 2.",
+                "<color=red>Р—Р°РІРґР°Р№С‚Рµ С€РєРѕРґРё</color> РІСЃС–Рј РІРѕСЂРѕР¶РёРј Р·Р°РіРѕРЅР°Рј РЅР° 2.",
                 "Sprites/Cards/Earthshaker2", "Sounds/Cards/StartOrder/EarthshakerEchoSlam", Color.yellow,
                 4, 4, damage: 2, nearDamage: -1)); //4 + allDamage 2
 
             CardManagerList.AllCards.Add(new Card("Chen", "Hand Of God", "<color=green>Boost</color> all allied units by 1 and give them 2 <color=green>endurance</color>.",
-                "<color=green>Усильте</color> все союзные отряды на 1 и дайте им 2 <color=green>выносливости</color>.",
-                "<color=green>Підсильте</color> всі союзні загони на 1 і надайте їм 2 <color=green>витривалості</color>.",
+                "<color=green>РЈСЃРёР»СЊС‚Рµ</color> РІСЃРµ СЃРѕСЋР·РЅС‹Рµ РѕС‚СЂСЏРґС‹ РЅР° 1 Рё РґР°Р№С‚Рµ РёРј 2 <color=green>РІС‹РЅРѕСЃР»РёРІРѕСЃС‚Рё</color>.",
+                "<color=green>РџС–РґСЃРёР»СЊС‚Рµ</color> РІСЃС– СЃРѕСЋР·РЅС– Р·Р°РіРѕРЅРё РЅР° 1 С– РЅР°РґР°Р№С‚Рµ С—Рј 2 <color=green>РІРёС‚СЂРёРІР°Р»РѕСЃС‚С–</color>.",
                 "Sprites/Cards/Chen1", "Sounds/Cards/StartOrder/ChenHandOfGod", Color.yellow,
                 3, 3, boost: 1, rangeBoost: -1, enduranceOrBleedingOther: 2, isEnemyTargetEnduranceOrBleeding: false)); //3 + allEnd 2
 
             CardManagerList.AllCards.Add(new Card("Chen", "Divine Favor", "At the end of the your turn, deal 1 <color=green>boost</color> to a random allied unit, repeat 2 <color=red>times</color>.",
-                "В конце вашего хода дайте 1 <color=green>усиление</color> случайному союзному отряду, повторите 2 <color=red>раза</color>.",
-                "В кінці вашого ходу надайте 1 <color=green>підсилення</color> випадковому союзному загону, повторіть 2 <color=red>рази</color>.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РґР°Р№С‚Рµ 1 <color=green>СѓСЃРёР»РµРЅРёРµ</color> СЃР»СѓС‡Р°Р№РЅРѕРјСѓ СЃРѕСЋР·РЅРѕРјСѓ РѕС‚СЂСЏРґСѓ, РїРѕРІС‚РѕСЂРёС‚Рµ 2 <color=red>СЂР°Р·Р°</color>.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ РЅР°РґР°Р№С‚Рµ 1 <color=green>РїС–РґСЃРёР»РµРЅРЅСЏ</color> РІРёРїР°РґРєРѕРІРѕРјСѓ СЃРѕСЋР·РЅРѕРјСѓ Р·Р°РіРѕРЅСѓ, РїРѕРІС‚РѕСЂС–С‚СЊ 2 <color=red>СЂР°Р·Рё</color>.",
                 "Sprites/Cards/Chen2", "Sounds/Cards/StartOrder/ChenDivineFavor", Color.yellow,
                 5, 5, endTurnCount: 2, endTurnRandomBoost: 1)); //5 + 2endTurn
 
             CardManagerList.AllCards.Add(new Card("Sniper", "Assasinate", "<color=red>Damage</color> enemy unit by 11.",
-                "<color=red>Повредите</color> вражеский отряд на 11.",
-                "<color=red>Завдайте шкоди</color> ворожому загону на 11.",
+                "<color=red>РџРѕРІСЂРµРґРёС‚Рµ</color> РІСЂР°Р¶РµСЃРєРёР№ РѕС‚СЂСЏРґ РЅР° 11.",
+                "<color=red>Р—Р°РІРґР°Р№С‚Рµ С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ РЅР° 11.",
                 "Sprites/Cards/Sniper1", "Sounds/Cards/StartOrder/SniperAssasinate", Color.yellow,
                 3, 3, damage: 11)); // 13
 
             CardManagerList.AllCards.Add(new Card("Sniper", "Shrapnel", "At the end of the your turn, deal 1 <color=red>damage</color> to a random enemy unit, repeat 2 <color=red>times</color>.",
-                "В конце вашего хода нанесите 1 <color=red>урон</color> случайному вражескому отряду, повторите 2 <color=red>раза</color>.",
-                "В кінці вашого ходу завдайте 1 <color=red>шкоду</color> випадковому ворожому загону, повторіть 2 <color=red>рази</color>.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРµСЃРёС‚Рµ 1 <color=red>СѓСЂРѕРЅ</color> СЃР»СѓС‡Р°Р№РЅРѕРјСѓ РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ, РїРѕРІС‚РѕСЂРёС‚Рµ 2 <color=red>СЂР°Р·Р°</color>.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ 1 <color=red>С€РєРѕРґСѓ</color> РІРёРїР°РґРєРѕРІРѕРјСѓ РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ, РїРѕРІС‚РѕСЂС–С‚СЊ 2 <color=red>СЂР°Р·Рё</color>.",
                 "Sprites/Cards/Sniper2", "Sounds/Cards/StartOrder/SniperAssasinate", Color.yellow,
                 4, 4, armor: 1, endTurnCount: 2, endTurnRandomDamage: 1)); // 4 + 2 end turn
 
             CardManagerList.AllCards.Add(new Card("Bane", "BrainSap", "<color=red>Damage</color> enemy unit and <color=green>boost</color> self by 4.",
-                "<color=red>Повредите</color> вражеский отряд и <color=green>усильте</color> себя на 4.",
-                "<color=red>Завдайте шкоди</color> ворожому загону і <color=green>підсильте</color> себе на 4.",
+                "<color=red>РџРѕРІСЂРµРґРёС‚Рµ</color> РІСЂР°Р¶РµСЃРєРёР№ РѕС‚СЂСЏРґ Рё <color=green>СѓСЃРёР»СЊС‚Рµ</color> СЃРµР±СЏ РЅР° 4.",
+                "<color=red>Р—Р°РІРґР°Р№С‚Рµ С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ С– <color=green>РїС–РґСЃРёР»СЊС‚Рµ</color> СЃРµР±Рµ РЅР° 4.",
                 "Sprites/Cards/Bane1", "Sounds/Cards/StartOrder/BaneBrainSap", Color.magenta,
                 4, 4, damage: 4, selfBoost: 4, addictionWithEnemyField: true)); // 12
 
             CardManagerList.AllCards.Add(new Card("Zeus", "Arc Lightning", "<color=red>Damage</color> enemy unit by 3, and near units by 2, and near by 1.",
-                "Нанесите 3 <color=red>урона</color> вражескому отряду и 2 <color=red>урона</color> ближайшим отрядам, и 1 <color=red>урон</color> ближайшим отрядам.",
-                "Завдайте 3 <color=red>шкоди</color> ворожому загону і 2 <color=red>шкоди</color> найближчим загонам, і 1 <color=red>шкоду</color> найближчим загiнам.",
+                "РќР°РЅРµСЃРёС‚Рµ 3 <color=red>СѓСЂРѕРЅР°</color> РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ Рё 2 <color=red>СѓСЂРѕРЅР°</color> Р±Р»РёР¶Р°Р№С€РёРј РѕС‚СЂСЏРґР°Рј, Рё 1 <color=red>СѓСЂРѕРЅ</color> Р±Р»РёР¶Р°Р№С€РёРј РѕС‚СЂСЏРґР°Рј.",
+                "Р—Р°РІРґР°Р№С‚Рµ 3 <color=red>С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ С– 2 <color=red>С€РєРѕРґРё</color> РЅР°Р№Р±Р»РёР¶С‡РёРј Р·Р°РіРѕРЅР°Рј, С– 1 <color=red>С€РєРѕРґСѓ</color> РЅР°Р№Р±Р»РёР¶С‡РёРј Р·Р°РіiРЅР°Рј.",
                 "Sprites/Cards/Zeus1", "Sounds/Cards/StartOrder/ZeusArcLightning", Color.blue,
                 3, 3, damage: 3, nearDamage: 2, changeDamage: -1)); //12
 
             CardManagerList.AllCards.Add(new Card("Zeus", "Lightning Bolt", "<color=red>Damage</color> enemy unit by 5 and <color=yellow>stun</color> it.",
-                "Нанесите 5 <color=red>урона</color> вражескому отряду и <color=yellow>оглушите</color> его.",
-                "Завдайте 5 <color=red>шкоди</color> ворожому загону і <color=yellow>оглушіть</color> його.",
+                "РќР°РЅРµСЃРёС‚Рµ 5 <color=red>СѓСЂРѕРЅР°</color> РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ Рё <color=yellow>РѕРіР»СѓС€РёС‚Рµ</color> РµРіРѕ.",
+                "Р—Р°РІРґР°Р№С‚Рµ 5 <color=red>С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ С– <color=yellow>РѕРіР»СѓС€С–С‚СЊ</color> Р№РѕРіРѕ.",
                 "Sprites/Cards/Zeus2", "Sounds/Cards/StartOrder/ZeusLightningBolt", Color.blue,
                 6, 6, damage: 5, stunOther: true)); //11 
 
             CardManagerList.AllCards.Add(new Card("Zeus", "Thundergod's Wrath", "<color=red>Damage</color> all enemy units by 3.",
-                "Нанесите 3 <color=red>урона</color> всем вражеским отрядам.",
-                "Завдайте 3 <color=red>шкоди</color> всім ворожим загонам.",
+                "РќР°РЅРµСЃРёС‚Рµ 3 <color=red>СѓСЂРѕРЅР°</color> РІСЃРµРј РІСЂР°Р¶РµСЃРєРёРј РѕС‚СЂСЏРґР°Рј.",
+                "Р—Р°РІРґР°Р№С‚Рµ 3 <color=red>С€РєРѕРґРё</color> РІСЃС–Рј РІРѕСЂРѕР¶РёРј Р·Р°РіРѕРЅР°Рј.",
                 "Sprites/Cards/Zeus3", "Sounds/Cards/StartOrder/ZeusThundergod'sWrath", Color.blue,
                  1, 1, damage: 3, nearDamage: -1)); //1 + 3 all
 
             CardManagerList.AllCards.Add(new Card("Abaddon", "Mist Coil", "<color=green>Boost</color> allied unit by 8 and <color=red>damage</color> self by 4.",
-                "<color=green>Усильте</color> союзный отряд на 8 и нанесите 4 <color=red>урона</color> себе.",
-                "<color=green>Підсильте</color> союзний загiн на 8 і завдайте 4 <color=red>шкоди</color> собі.",
+                "<color=green>РЈСЃРёР»СЊС‚Рµ</color> СЃРѕСЋР·РЅС‹Р№ РѕС‚СЂСЏРґ РЅР° 8 Рё РЅР°РЅРµСЃРёС‚Рµ 4 <color=red>СѓСЂРѕРЅР°</color> СЃРµР±Рµ.",
+                "<color=green>РџС–РґСЃРёР»СЊС‚Рµ</color> СЃРѕСЋР·РЅРёР№ Р·Р°РіiРЅ РЅР° 8 С– Р·Р°РІРґР°Р№С‚Рµ 4 <color=red>С€РєРѕРґРё</color> СЃРѕР±С–.",
                 "Sprites/Cards/Abaddon1", "Sounds/Cards/StartOrder/AbaddonMistCoil", Color.gray,
                 8, 8, boost: 8, selfDamage: 4, addictionWithSelfField: true)); //12
 
             CardManagerList.AllCards.Add(new Card("Abaddon", "Aphotic Shield", "<color=green>Boost</color> allied unit by 2 and give it <color=red>shield</color>. <color=red>Shield</color>.",
-                "<color=green>Усильте</color> союзный отряд на 2 и дайте ему <color=red>щит</color>.",
-                "<color=green>Підсильте</color> союзний загiн на 2 і надайте йому <color=red>щит</color>.",
+                "<color=green>РЈСЃРёР»СЊС‚Рµ</color> СЃРѕСЋР·РЅС‹Р№ РѕС‚СЂСЏРґ РЅР° 2 Рё РґР°Р№С‚Рµ РµРјСѓ <color=red>С‰РёС‚</color>.",
+                "<color=green>РџС–РґСЃРёР»СЊС‚Рµ</color> СЃРѕСЋР·РЅРёР№ Р·Р°РіiРЅ РЅР° 2 С– РЅР°РґР°Р№С‚Рµ Р№РѕРјСѓ <color=red>С‰РёС‚</color>.",
                 "Sprites/Cards/Abaddon2", "Sounds/Cards/StartOrder/AbaddonAphoticShield", Color.gray,
                 8, 8, boost: 2, shieldOther: true)); //10 + shieldOther
 
             CardManagerList.AllCards.Add(new Card("Abaddon", "BorrowedTime", "Whenever this unit takes <color=red>damage</color>, <color=green>boost</color> him by damage value",
-                "Каждый раз, когда этот отряд получает <color=red>урон</color>, <color=green>усильте</color> его на значение урона.",
-                "Щоразу, коли цей загін отримує <color=red>шкоду</color>, <color=green>підсильте</color> його на значення шкоди.",
+                "РљР°Р¶РґС‹Р№ СЂР°Р·, РєРѕРіРґР° СЌС‚РѕС‚ РѕС‚СЂСЏРґ РїРѕР»СѓС‡Р°РµС‚ <color=red>СѓСЂРѕРЅ</color>, <color=green>СѓСЃРёР»СЊС‚Рµ</color> РµРіРѕ РЅР° Р·РЅР°С‡РµРЅРёРµ СѓСЂРѕРЅР°.",
+                "Р©РѕСЂР°Р·Сѓ, РєРѕР»Рё С†РµР№ Р·Р°РіС–РЅ РѕС‚СЂРёРјСѓС” <color=red>С€РєРѕРґСѓ</color>, <color=green>РїС–РґСЃРёР»СЊС‚Рµ</color> Р№РѕРіРѕ РЅР° Р·РЅР°С‡РµРЅРЅСЏ С€РєРѕРґРё.",
                 "Sprites/Cards/Abaddon3", "Sounds/Cards/StartOrder/AbaddonBorrowedTime", Color.gray,
                  1, 1, healDamageValue: -1)); //1
 
             CardManagerList.AllCards.Add(new Card("Chaos Knight", "Phantasm", "<color=blue>Spawn</color> 3 your <color=blue>illusions</color> units near.",
-                "<color=blue>Создайте</color> 3 ваших <color=blue>иллюзии</color> рядом.",
-                "<color=blue>Створіть</color> 3 ваших <color=blue>ілюзії</color> поряд.",
+                "<color=blue>РЎРѕР·РґР°Р№С‚Рµ</color> 3 РІР°С€РёС… <color=blue>РёР»Р»СЋР·РёРё</color> СЂСЏРґРѕРј.",
+                "<color=blue>РЎС‚РІРѕСЂС–С‚СЊ</color> 3 РІР°С€РёС… <color=blue>С–Р»СЋР·С–С—</color> РїРѕСЂСЏРґ.",
                 "Sprites/Cards/ChaosKnight1", "Sounds/Cards/StartOrder/ChaosKnightPhantasm", Color.red,
                 5, 5, spawnCardCount: 3, spawnCardNumber: -1)); // 20
 
             CardManagerList.AllCards.Add(new Card("Chaos Knight", "Chaos Bolt", "<color=red>Damage</color> enemy unit by 2, <color=yellow>stun</color> him and <color=blue>spawn</color> 1 your <color=blue>illusion</color> unit near.",
-                "Нанесите 2 <color=red>урона</color> вражескому отряду, <color=yellow>оглушите</color> его и <color=blue>создайте</color> 1 вашу <color=blue>иллюзию</color> рядом.",
-                "Завдайте 2 <color=red>шкоди</color> ворожому загону, <color=yellow>оглушіть</color> його і <color=blue>створіть</color> 1 вашу <color=blue>ілюзію</color> поряд.",
+                "РќР°РЅРµСЃРёС‚Рµ 2 <color=red>СѓСЂРѕРЅР°</color> РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ, <color=yellow>РѕРіР»СѓС€РёС‚Рµ</color> РµРіРѕ Рё <color=blue>СЃРѕР·РґР°Р№С‚Рµ</color> 1 РІР°С€Сѓ <color=blue>РёР»Р»СЋР·РёСЋ</color> СЂСЏРґРѕРј.",
+                "Р—Р°РІРґР°Р№С‚Рµ 2 <color=red>С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ, <color=yellow>РѕРіР»СѓС€С–С‚СЊ</color> Р№РѕРіРѕ С– <color=blue>СЃС‚РІРѕСЂС–С‚СЊ</color> 1 РІР°С€Сѓ <color=blue>С–Р»СЋР·С–СЋ</color> РїРѕСЂСЏРґ.",
                 "Sprites/Cards/ChaosKnight2", "Sounds/Cards/StartOrder/ChaosKnightChaosBolt", Color.red,
                 6, 6, damage: 2, addictionWithEnemyField: true, spawnCardCount: 1, spawnCardNumber: -1, stunOther: true)); //12+2+stunOther
 
             CardManagerList.AllCards.Add(new Card("Chaos Knight", "Chaos Strike", "At the end of the your turn, deal 1 <color=red>damage</color> to a random enemy unit and <color=green>boost</color> self, repeat 1 <color=red>times</color>.",
-                "В конце вашего хода нанесите 1 <color=red>урон</color> случайному вражескому отряду и <color=green>усильте</color> себя, повторите 1 <color=red>раз</color>.",
-                "В кінці вашого ходу завдайте 1 <color=red>шкоду</color> випадковому ворожому загону і <color=green>підсильте</color> себе, повторіть 1 <color=red>раз</color>.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРµСЃРёС‚Рµ 1 <color=red>СѓСЂРѕРЅ</color> СЃР»СѓС‡Р°Р№РЅРѕРјСѓ РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ Рё <color=green>СѓСЃРёР»СЊС‚Рµ</color> СЃРµР±СЏ, РїРѕРІС‚РѕСЂРёС‚Рµ 1 <color=red>СЂР°Р·</color>.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ 1 <color=red>С€РєРѕРґСѓ</color> РІРёРїР°РґРєРѕРІРѕРјСѓ РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ С– <color=green>РїС–РґСЃРёР»СЊС‚Рµ</color> СЃРµР±Рµ, РїРѕРІС‚РѕСЂС–С‚СЊ 1 <color=red>СЂР°Р·</color>.",
                 "Sprites/Cards/ChaosKnight3", "Sounds/Cards/StartOrder/ChaosKnightChaosStrike", Color.red,
                 3, 3, endTurnCount: 1, endTurnRandomDamage: 1, endTurnSelfBoost: 1)); // 3 + 2 end turn
 
             CardManagerList.AllCards.Add(new Card("Lycan", "Summon Wolves", "<color=blue>Spawn</color> 2 units Wolves near.",
-                "Создайте 2 отряда волков рядом.",
-                "Створіть 2 загони вовків поряд.",
+                "РЎРѕР·РґР°Р№С‚Рµ 2 РѕС‚СЂСЏРґР° РІРѕР»РєРѕРІ СЂСЏРґРѕРј.",
+                "РЎС‚РІРѕСЂС–С‚СЊ 2 Р·Р°РіРѕРЅРё РІРѕРІРєС–РІ РїРѕСЂСЏРґ.",
                 "Sprites/Cards/Lycan1", "Sounds/Cards/StartOrder/LycanSummonWolves", Color.gray,
                 10, 10, spawnCardCount: 2, spawnCardNumber: 0)); //14
 
             CardManagerList.AllCards.Add(new Card("Lycan", "Feral Impulce", "At the end of the your turn, deal 2 <color=green>boost</color> to a random allied unit, repeat 1 <color=red>times</color>.",
-                "В конце вашего хода <color=green>усильте</color> случайный союзный отряд на 2, повторите 1 <color=red>раз</color>.",
-                "В кінці вашого ходу <color=green>підсильте</color> випадковий союзний загiн на 2, повторіть 1 <color=red>раз</color>.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° <color=green>СѓСЃРёР»СЊС‚Рµ</color> СЃР»СѓС‡Р°Р№РЅС‹Р№ СЃРѕСЋР·РЅС‹Р№ РѕС‚СЂСЏРґ РЅР° 2, РїРѕРІС‚РѕСЂРёС‚Рµ 1 <color=red>СЂР°Р·</color>.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ <color=green>РїС–РґСЃРёР»СЊС‚Рµ</color> РІРёРїР°РґРєРѕРІРёР№ СЃРѕСЋР·РЅРёР№ Р·Р°РіiРЅ РЅР° 2, РїРѕРІС‚РѕСЂС–С‚СЊ 1 <color=red>СЂР°Р·</color>.",
                 "Sprites/Cards/Lycan2", "Sounds/Cards/StartOrder/LycanFeralImpulce", Color.gray,
                 6, 6, endTurnCount: 1, endTurnRandomBoost: 2)); // 6 + 2 end turn
 
             CardManagerList.AllCards.Add(new Card("Lycan", "Shapeshift", "<color=red>Transformate</color> this unit to Lycan Wolf ",
-                "Трансформируйте этот отряд в волка Ликана.",
-                "Трансформуйте цей загін у вовка Ликана.",
+                "РўСЂР°РЅСЃС„РѕСЂРјРёСЂСѓР№С‚Рµ СЌС‚РѕС‚ РѕС‚СЂСЏРґ РІ РІРѕР»РєР° Р›РёРєР°РЅР°.",
+                "РўСЂР°РЅСЃС„РѕСЂРјСѓР№С‚Рµ С†РµР№ Р·Р°РіС–РЅ Сѓ РІРѕРІРєР° Р›РёРєР°РЅР°.",
                 "Sprites/Cards/Lycan3", "Sounds/Cards/StartOrder/LycanShapeshift", Color.gray,
                 1, 1, transformationNumber: 0));//20 - 4 end turn
 
             CardManagerList.AllCards.Add(new Card("Riki", "Tricks of the Trade", "<color=red>Damage</color> 3 enemy units by 4. <color=purple>Invisibility</color>. <color=orange>Invulnerability</color>.",
-                "Нанесите 4 <color=red>урона</color> 3 вражеским отрядам. <color=purple>Невидимость</color>. <color=orange>Неуязвимость</color>.",
-                "Завдайте 4 <color=red>шкоди</color> 3 ворожим загонам. <color=purple>Невидимість</color>. <color=orange>Незахищеність</color>.",
+                "РќР°РЅРµСЃРёС‚Рµ 4 <color=red>СѓСЂРѕРЅР°</color> 3 РІСЂР°Р¶РµСЃРєРёРј РѕС‚СЂСЏРґР°Рј. <color=purple>РќРµРІРёРґРёРјРѕСЃС‚СЊ</color>. <color=orange>РќРµСѓСЏР·РІРёРјРѕСЃС‚СЊ</color>.",
+                "Р—Р°РІРґР°Р№С‚Рµ 4 <color=red>С€РєРѕРґРё</color> 3 РІРѕСЂРѕР¶РёРј Р·Р°РіРѕРЅР°Рј. <color=purple>РќРµРІРёРґРёРјС–СЃС‚СЊ</color>. <color=orange>РќРµР·Р°С…РёС‰РµРЅС–СЃС‚СЊ</color>.",
                 "Sprites/Cards/Riki1", "Sounds/Cards/StartOrder/RikiTricksOfTheTrade", Color.magenta,
                 2, 2, damage: 4, nearDamage: 1, invisibility: true, invulnerability: true)); // -2 + 12
 
             CardManagerList.AllCards.Add(new Card("Riki", "Cloak And Dagger", "<color=red>Damage</color> enemy unit by 12. <color=purple>Invisibility</color>.",
-                "Нанесите 12 <color=red>урона</color> вражескому отряду. <color=purple>Невидимость</color>.",
-                "Завдайте 12 <color=red>шкоди</color> ворожому загону. <color=purple>Невидимість</color>.",
+                "РќР°РЅРµСЃРёС‚Рµ 12 <color=red>СѓСЂРѕРЅР°</color> РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ. <color=purple>РќРµРІРёРґРёРјРѕСЃС‚СЊ</color>.",
+                "Р—Р°РІРґР°Р№С‚Рµ 12 <color=red>С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ. <color=purple>РќРµРІРёРґРёРјС–СЃС‚СЊ</color>.",
                 "Sprites/Cards/Riki2", "Sounds/Cards/StartOrder/RikiCloakAndDagger", Color.magenta,
-                1, 1, armor:2, damage: 12, invisibility: true)); // -1 + 12
+                1, 1, armor: 2, damage: 12, invisibility: true)); // -1 + 12
 
             CardManagerList.AllCards.Add(new Card("Juggernaut", "Omnislash", "<color=red>Damage</color> enemy units by 5 and near by 3 and near by 1. <color=orange>Invulnerability</color>.",
-                "Нанесите 5 <color=red>урона</color> вражеским отрядам, 3 <color=red>урона</color> соседним отрядам и 1 <color=red>урон</color> соседнему отряду. <color=orange>Неуязвимость</color>.",
-                "Завдайте 5 <color=red>шкоди</color> ворожим загонам, 3 <color=red>шкоди</color> сусіднім загонам і 1 <color=red>шкоду</color> сусідньому загону. <color=orange>Незахищеність</color>.",
+                "РќР°РЅРµСЃРёС‚Рµ 5 <color=red>СѓСЂРѕРЅР°</color> РІСЂР°Р¶РµСЃРєРёРј РѕС‚СЂСЏРґР°Рј, 3 <color=red>СѓСЂРѕРЅР°</color> СЃРѕСЃРµРґРЅРёРј РѕС‚СЂСЏРґР°Рј Рё 1 <color=red>СѓСЂРѕРЅ</color> СЃРѕСЃРµРґРЅРµРјСѓ РѕС‚СЂСЏРґСѓ. <color=orange>РќРµСѓСЏР·РІРёРјРѕСЃС‚СЊ</color>.",
+                "Р—Р°РІРґР°Р№С‚Рµ 5 <color=red>С€РєРѕРґРё</color> РІРѕСЂРѕР¶РёРј Р·Р°РіРѕРЅР°Рј, 3 <color=red>С€РєРѕРґРё</color> СЃСѓСЃС–РґРЅС–Рј Р·Р°РіРѕРЅР°Рј С– 1 <color=red>С€РєРѕРґСѓ</color> СЃСѓСЃС–РґРЅСЊРѕРјСѓ Р·Р°РіРѕРЅСѓ. <color=orange>РќРµР·Р°С…РёС‰РµРЅС–СЃС‚СЊ</color>.",
                 "Sprites/Cards/Juggernaut1", "Sounds/Cards/StartOrder/JuggernautOmnislash", Color.green,
                 2, 2, damage: 5, nearDamage: 2, changeDamage: -2, invulnerability: true)); //14
 
             CardManagerList.AllCards.Add(new Card("Juggernaut", "Blade Dance", "At the end of the your turn, deal 4 <color=red>damage</color> to a random enemy unit, repeat 1 <color=red>times</color>.",
-                "В конце вашего хода нанесите 4 <color=red>урона</color> случайному вражескому отряду, повторите 1 <color=red>раз</color>.",
-                "В кінці вашого ходу завдайте 4 <color=red>шкоди</color> випадковому ворожому загону, повторіть 1 <color=red>раз</color>.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРµСЃРёС‚Рµ 4 <color=red>СѓСЂРѕРЅР°</color> СЃР»СѓС‡Р°Р№РЅРѕРјСѓ РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ, РїРѕРІС‚РѕСЂРёС‚Рµ 1 <color=red>СЂР°Р·</color>.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ 4 <color=red>С€РєРѕРґРё</color> РІРёРїР°РґРєРѕРІРѕРјСѓ РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ, РїРѕРІС‚РѕСЂС–С‚СЊ 1 <color=red>СЂР°Р·</color>.",
                 "Sprites/Cards/Juggernaut2", "Sounds/Cards/StartOrder/JuggernautBladeDance", Color.green,
                 1, 1, endTurnCount: 1, endTurnRandomDamage: 4)); //1 + 4 end turn
 
             CardManagerList.AllCards.Add(new Card("Juggernaut", "Healing Ward", "<color=blue>Spawn</color> Healing Ward to the left of this unit.",
-                "Создайте Healing Ward слева от этого отряда.",
-                "Створіть Healing Ward зліва від цього загону.",
+                "РЎРѕР·РґР°Р№С‚Рµ Healing Ward СЃР»РµРІР° РѕС‚ СЌС‚РѕРіРѕ РѕС‚СЂСЏРґР°.",
+                "РЎС‚РІРѕСЂС–С‚СЊ Healing Ward Р·Р»С–РІР° РІС–Рґ С†СЊРѕРіРѕ Р·Р°РіРѕРЅСѓ.",
                 "Sprites/Cards/Juggernaut3", "Sounds/Cards/StartOrder/JuggernautHealingWard", Color.green,
-                 1, 1, armor:2, spawnCardCount: 1, spawnCardNumber: 1)); //1 + 1 + 4 end turn
+                 1, 1, armor: 2, spawnCardCount: 1, spawnCardNumber: 1)); //1 + 1 + 4 end turn
 
             CardManagerList.AllCards.Add(new Card("Naga Siren", "Mirror Image", "<color=blue>Spawn</color> 2 your <color=blue>illusions</color> units near.",
-                "Создайте 2 ваши <color=blue>иллюзии</color> рядом.",
-                "Створіть 2 ваші <color=blue>ілюзії</color> поряд.",
+                "РЎРѕР·РґР°Р№С‚Рµ 2 РІР°С€Рё <color=blue>РёР»Р»СЋР·РёРё</color> СЂСЏРґРѕРј.",
+                "РЎС‚РІРѕСЂС–С‚СЊ 2 РІР°С€С– <color=blue>С–Р»СЋР·С–С—</color> РїРѕСЂСЏРґ.",
                 "Sprites/Cards/NagaSiren1", "Sounds/Cards/StartOrder/NagaSirenMirrorImage", Color.cyan,
                 7, 7, spawnCardCount: 2, spawnCardNumber: -1)); // 21
 
             CardManagerList.AllCards.Add(new Card("Naga Siren", "Song of the Siren", "<color=yellow>Stun</color> all enemy units. <color=orange>Invulnerability</color>.",
-                "Оглушите все вражеские отряды. <color=orange>Неуязвимость</color>.",
-                "Оглушіть всі ворожі загони. <color=orange>Незахищеність</color>.",
+                "РћРіР»СѓС€РёС‚Рµ РІСЃРµ РІСЂР°Р¶РµСЃРєРёРµ РѕС‚СЂСЏРґС‹. <color=orange>РќРµСѓСЏР·РІРёРјРѕСЃС‚СЊ</color>.",
+                "РћРіР»СѓС€С–С‚СЊ РІСЃС– РІРѕСЂРѕР¶С– Р·Р°РіРѕРЅРё. <color=orange>РќРµР·Р°С…РёС‰РµРЅС–СЃС‚СЊ</color>.",
                 "Sprites/Cards/NagaSiren2", "Sounds/Cards/StartOrder/NagaSirenSongOfTheSiren", Color.cyan,
                 12, 12, nearDamage: -1, stunOther: true, invulnerability: true)); //12 + stun
 
             CardManagerList.AllCards.Add(new Card("Terrorblade", "Conjure Image", "<color=blue>Spawn</color> 1 your <color=blue>illusion</color> unit near. At the end of the your turn, deal 1 damage to a random enemy unit, repeat 1 <color=red>times</color>.",
-                "Создайте 1 вашу <color=blue>иллюзию</color> рядом. В конце вашего хода нанесите 1 <color=red>урон</color> случайному вражескому отряду, повторите 1 <color=red>раз</color>.",
-                "Створіть 1 вашу <color=blue>ілюзію</color> поряд. В кінці вашого ходу завдайте 1 <color=red>шкоду</color> випадковому ворожому загону, повторіть 1 <color=red>раз</color>.",
+                "РЎРѕР·РґР°Р№С‚Рµ 1 РІР°С€Сѓ <color=blue>РёР»Р»СЋР·РёСЋ</color> СЂСЏРґРѕРј. Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРµСЃРёС‚Рµ 1 <color=red>СѓСЂРѕРЅ</color> СЃР»СѓС‡Р°Р№РЅРѕРјСѓ РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ, РїРѕРІС‚РѕСЂРёС‚Рµ 1 <color=red>СЂР°Р·</color>.",
+                "РЎС‚РІРѕСЂС–С‚СЊ 1 РІР°С€Сѓ <color=blue>С–Р»СЋР·С–СЋ</color> РїРѕСЂСЏРґ. Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ 1 <color=red>С€РєРѕРґСѓ</color> РІРёРїР°РґРєРѕРІРѕРјСѓ РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ, РїРѕРІС‚РѕСЂС–С‚СЊ 1 <color=red>СЂР°Р·</color>.",
                 "Sprites/Cards/Terrorblade1", "Sounds/Cards/StartOrder/TerrorbladeConjureImage", Color.blue,
                 3, 3, endTurnCount: 1, endTurnRandomDamage: 1, spawnCardCount: 1, spawnCardNumber: -1)); // 6 + 2 end turn
 
             CardManagerList.AllCards.Add(new Card("Terrorblade", "Sunder", "<color=red>Swap points</color> with unit.",
-                "Поменяйте очки с отрядом.",
-                "Обміняйте очки з загоном.",
+                "РџРѕРјРµРЅСЏР№С‚Рµ РѕС‡РєРё СЃ РѕС‚СЂСЏРґРѕРј.",
+                "РћР±РјС–РЅСЏР№С‚Рµ РѕС‡РєРё Р· Р·Р°РіРѕРЅРѕРј.",
                 "Sprites/Cards/Terrorblade2", "Sounds/Cards/StartOrder/TerrorbladeSunder", Color.blue,
                 8, 8, swapPoints: true)); // 8 + swap
 
             CardManagerList.AllCards.Add(new Card("Bloodseeker", "Bloodrage", "Give self 3 <color=red>bleeding</color>.",
-                "Дайте себе 3 <color=red>кровотечения</color>.",
-                "Надайте собі 3 <color=red>кровотечі</color>.",
+                "Р”Р°Р№С‚Рµ СЃРµР±Рµ 3 <color=red>РєСЂРѕРІРѕС‚РµС‡РµРЅРёСЏ</color>.",
+                "РќР°РґР°Р№С‚Рµ СЃРѕР±С– 3 <color=red>РєСЂРѕРІРѕС‚РµС‡С–</color>.",
                 "Sprites/Cards/Bloodseeker1", "Sounds/Cards/StartOrder/BloodseekerBloodrage", Color.red,
                 12, 12, enduranceOrBleedingSelf: -3)); //12 - 3 bleed
 
             CardManagerList.AllCards.Add(new Card("Bloodseeker", "Rupture", "Give an enemy unit 7 <color=red>bleeding</color>.",
-                "Дайте вражескому отряду 7 <color=red>кровотечений</color>.",
-                "Надайте ворожому загону 7 <color=red>кровотечі</color>.",
+                "Р”Р°Р№С‚Рµ РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ 7 <color=red>РєСЂРѕРІРѕС‚РµС‡РµРЅРёР№</color>.",
+                "РќР°РґР°Р№С‚Рµ РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ 7 <color=red>РєСЂРѕРІРѕС‚РµС‡С–</color>.",
                 "Sprites/Cards/Bloodseeker2", "Sounds/Cards/StartOrder/BloodseekerRupture", Color.red,
                  8, 8, enduranceOrBleedingOther: -7, isEnemyTargetEnduranceOrBleeding: true)); //8 + 7 bleed
 
             CardManagerList.AllCards.Add(new Card("Hoodwink", "Bushwhack", "<color=red>Damage</color> 3 near enemy units by 2 then <color=yellow>stun</color> them.",
-                "Нанесите 2 <color=red>урона</color> 3 соседним вражеским отрядам, затем <color=yellow>оглушите</color> их.",
-                "Завдайте 2 <color=red>шкоди</color> 3 сусіднім ворожим загонам, а потім <color=yellow>засліпіть</color> їх.",
+                "РќР°РЅРµСЃРёС‚Рµ 2 <color=red>СѓСЂРѕРЅР°</color> 3 СЃРѕСЃРµРґРЅРёРј РІСЂР°Р¶РµСЃРєРёРј РѕС‚СЂСЏРґР°Рј, Р·Р°С‚РµРј <color=yellow>РѕРіР»СѓС€РёС‚Рµ</color> РёС….",
+                "Р—Р°РІРґР°Р№С‚Рµ 2 <color=red>С€РєРѕРґРё</color> 3 СЃСѓСЃС–РґРЅС–Рј РІРѕСЂРѕР¶РёРј Р·Р°РіРѕРЅР°Рј, Р° РїРѕС‚С–Рј <color=yellow>Р·Р°СЃР»С–РїС–С‚СЊ</color> С—С….",
                 "Sprites/Cards/Hoodwink1", "Sounds/Cards/StartOrder/HoodwinkBushwhack", Color.green,
                 6, 6, damage: 2, nearDamage: 1, stunOther: true)); //12
 
             CardManagerList.AllCards.Add(new Card("Hoodwink", "Sharpshooter", "<color=blue>Timer</color> 4: at the end of your turn, deal 4 <color=red>damage</color> to a random enemy unit 1 <color=red>times</color>.",
-                "Таймер 4: в конце вашего хода нанесите 4 <color=red>урона</color> случайному вражескому отряду 1 <color=red>раз</color>.",
-                "Таймер 4: в кінці вашого ходу завдайте 4 <color=red>шкоди</color> випадковому ворожому загону 1 <color=red>раз</color>.",
+                "РўР°Р№РјРµСЂ 4: РІ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРµСЃРёС‚Рµ 4 <color=red>СѓСЂРѕРЅР°</color> СЃР»СѓС‡Р°Р№РЅРѕРјСѓ РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ 1 <color=red>СЂР°Р·</color>.",
+                "РўР°Р№РјРµСЂ 4: РІ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ 4 <color=red>С€РєРѕРґРё</color> РІРёРїР°РґРєРѕРІРѕРјСѓ РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ 1 <color=red>СЂР°Р·</color>.",
                 "Sprites/Cards/Hoodwink2", "Sounds/Cards/StartOrder/HoodwinkSharpshooter", Color.green,
                 3, 3, timerSoundPath: "Sounds/Cards/StartOrder/HoodwinkSharpshooterTimer",
                 timer: 4, endTurnCount: 1, endTurnRandomDamage: 4)); //3 + 4 end turn
 
             CardManagerList.AllCards.Add(new Card("Sven", "Storm Hammer", "<color=red>Damage</color> enemy unit by 2 and <color=yellow>stun</color> then.",
-                "Нанесите 2 <color=red>урона</color> вражескому отряду и <color=yellow>оглушите</color> его.",
-                "Завдайте 2 <color=red>шкоди</color> ворожому загону і <color=yellow>засліпіть</color> його.",
+                "РќР°РЅРµСЃРёС‚Рµ 2 <color=red>СѓСЂРѕРЅР°</color> РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ Рё <color=yellow>РѕРіР»СѓС€РёС‚Рµ</color> РµРіРѕ.",
+                "Р—Р°РІРґР°Р№С‚Рµ 2 <color=red>С€РєРѕРґРё</color> РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ С– <color=yellow>Р·Р°СЃР»С–РїС–С‚СЊ</color> Р№РѕРіРѕ.",
                 "Sprites/Cards/Sven1", "Sounds/Cards/StartOrder/SvenStormHammer", Color.gray,
                 8, 8, damage: 2, stunOther: true, armor: 6)); //10
 
             CardManagerList.AllCards.Add(new Card("Sven", "Warcry", "Give all allied units 3 armor.",
-                "Дайте всем союзным отрядам 3 брони.",
-                "Надайте всім союзним загонам 3 броні.",
+                "Р”Р°Р№С‚Рµ РІСЃРµРј СЃРѕСЋР·РЅС‹Рј РѕС‚СЂСЏРґР°Рј 3 Р±СЂРѕРЅРё.",
+                "РќР°РґР°Р№С‚Рµ РІСЃС–Рј СЃРѕСЋР·РЅРёРј Р·Р°РіРѕРЅР°Рј 3 Р±СЂРѕРЅС–.",
                 "Sprites/Cards/Sven2", "Sounds/Cards/StartOrder/SvenWarcry", Color.gray,
                 7, 7, armor: 3, rangeBoost: -1, armorOther: 3)); //
 
             CardManagerList.AllCards.Add(new Card("Sven", "God's Strength", "<color=blue>Timer</color> 3: <color=green>boost</color> self by self max point",
-                "Таймер 3: <color=green>усильте</color> себя на максимальное количество очков.",
-                "Таймер 3: <color=green>підсильте</color> себе на максимальну кількість очок.",
+                "РўР°Р№РјРµСЂ 3: <color=green>СѓСЃРёР»СЊС‚Рµ</color> СЃРµР±СЏ РЅР° РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕС‡РєРѕРІ.",
+                "РўР°Р№РјРµСЂ 3: <color=green>РїС–РґСЃРёР»СЊС‚Рµ</color> СЃРµР±Рµ РЅР° РјР°РєСЃРёРјР°Р»СЊРЅСѓ РєС–Р»СЊРєС–СЃС‚СЊ РѕС‡РѕРє.",
                 "Sprites/Cards/Sven3", "Sounds/Cards/StartOrder/SvenGod'sStrength", Color.gray,
                 8, 8, timerSoundPath: "Sounds/Cards/StartOrder/SvenGod'sStrengthTimer",
                 armor: 2, timer: 3, endTurnCount: 1, endTurnSelfBoost: 8, timerEndTurnNoMoreAction: true)); //
@@ -584,28 +362,28 @@ public class CardManager : MonoBehaviour
             // Transformation
 
             CardManagerList.TransformationCards.Add(new Card("Lycan", "Wolf Form", "At the end of your turn, deal 2 <color=red>Damage</color> to nearby units.",
-                "В конце вашего хода нанесите 2 <color=red>урона</color> соседним отрядам.",
-                "В кінці вашого ходу завдайте 2 <color=red>шкоди</color> сусіднім загонам.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРµСЃРёС‚Рµ 2 <color=red>СѓСЂРѕРЅР°</color> СЃРѕСЃРµРґРЅРёРј РѕС‚СЂСЏРґР°Рј.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ 2 <color=red>С€РєРѕРґРё</color> СЃСѓСЃС–РґРЅС–Рј Р·Р°РіРѕРЅР°Рј.",
                 "Sprites/Cards/LycanWolf", "Sounds/Cards/StartOrder/LycanWolf", Color.gray,
                 20, 20, endTurnCount: 1, endTurnNearDamage: 2));
 
             // SUMMONS
 
             CardManagerList.SummonCards.Add(new Card("Wolf", "Summon", "Nothing",
-                "Ничего",
-                "Нічого",
+                "РќРёС‡РµРіРѕ",
+                "РќС–С‡РѕРіРѕ",
                 "Sprites/Cards/Wolf", "Sounds/Cards/StartOrder/Wolf", Color.gray,
                 2, 2));
 
             CardManagerList.SummonCards.Add(new Card("Healing Ward", "Ward", "At the end of your turn, <color=green>boost</color> 2 nearby units by 2",
-                "В конце вашего хода <color=green>усильте</color> 2 соседних отряда на 2.",
-                "В кінці вашого ходу <color=green>підсильте</color> 2 сусідні загони на 2.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° <color=green>СѓСЃРёР»СЊС‚Рµ</color> 2 СЃРѕСЃРµРґРЅРёС… РѕС‚СЂСЏРґР° РЅР° 2.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ <color=green>РїС–РґСЃРёР»СЊС‚Рµ</color> 2 СЃСѓСЃС–РґРЅС– Р·Р°РіРѕРЅРё РЅР° 2.",
                 "Sprites/Cards/HealingWard", "Sounds/Cards/StartOrder/HealingWard", Color.green,
                 1, 1, endTurnCount: 1, endTurnNearBoost: 2));
 
             CardManagerList.SummonCards.Add(new Card("Ghost Ship", "Ship", "At the end of your turn, deal 2 <color=red>damage</color> to a random enemy unit and 1 damage to yourself 1 <color=red>times</color>.",
-                "В конце вашего хода нанесите 2 <color=red>урона</color> случайному вражескому отряду и 1 <color=red>урон</color> себе 1 <color=red>раз</color>.",
-                "В кінці вашого ходу завдайте 2 <color=red>шкоди</color> випадковому ворожому загону і 1 <color=red>шкоду</color> собі 1 <color=red>раз</color>.",
+                "Р’ РєРѕРЅС†Рµ РІР°С€РµРіРѕ С…РѕРґР° РЅР°РЅРµСЃРёС‚Рµ 2 <color=red>СѓСЂРѕРЅР°</color> СЃР»СѓС‡Р°Р№РЅРѕРјСѓ РІСЂР°Р¶РµСЃРєРѕРјСѓ РѕС‚СЂСЏРґСѓ Рё 1 <color=red>СѓСЂРѕРЅ</color> СЃРµР±Рµ 1 <color=red>СЂР°Р·</color>.",
+                "Р’ РєС–РЅС†С– РІР°С€РѕРіРѕ С…РѕРґСѓ Р·Р°РІРґР°Р№С‚Рµ 2 <color=red>С€РєРѕРґРё</color> РІРёРїР°РґРєРѕРІРѕРјСѓ РІРѕСЂРѕР¶РѕРјСѓ Р·Р°РіРѕРЅСѓ С– 1 <color=red>С€РєРѕРґСѓ</color> СЃРѕР±С– 1 <color=red>СЂР°Р·</color>.",
                 "Sprites/Cards/GhostShip", "Sounds/Cards/StartOrder/GhostShip", Color.blue,
                 5, 5, endTurnCount: 1, endTurnRandomDamage: 2, endTurnSelfDamage: 1));
 
