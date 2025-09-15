@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -69,28 +69,24 @@ public class GameManager : MonoBehaviour
 
     public static Game CurrentGame;
 
-    private Transform _enemyHand;
-    private Transform _playerHand;
-    private Transform _enemyField;
-    private Transform _playerField;
-    private GameObject _enemyHandPass;
-    private GameObject _playerHandPass;
+    public GameObject CardPref;
 
-    private int _turn;
-    private int _turnTime;
-    private int _playerPoints;
-    private int _enemyPoints;
+    public CardInfoScript StartChoseCard;
+    public GameObject[] HowToPlayList;
+    public GameObject HowToPlayFon;
+
+    //ChangeGameCharacteristics
+    public int MaxNumberCardInField = 10;
+    public int TurnDuration = 30;
+    public int ValueDeckCards = 20;
+    public int ValueHandCards = 10;
+
+    public float TimeDrawCardStart = 0.15f;
+    public float TimeDrawCard = 0.3f;
 
     [HideInInspector] public bool IsStartGiveCards = false;
     [HideInInspector] public bool IsDrag;
     [HideInInspector] public bool IsChooseCard;
-    public GameObject CardPref;
-
-    private bool isPlayerPassed;
-    private bool isEnemyPassed;
-
-    public CardInfoScript StartChoseCard;
-    private CardInfoScript _choosenCard;
 
     [HideInInspector] public List<CardInfoScript> PlayerHandCards = new List<CardInfoScript>();
     [HideInInspector] public List<CardInfoScript> PlayerFieldCards = new List<CardInfoScript>();
@@ -109,19 +105,23 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool IsChoosing;
     [HideInInspector] public bool IsHandCardPlaying;
 
+    private Transform _enemyHand;
+    private Transform _playerHand;
+    private Transform _enemyField;
+    private Transform _playerField;
+    private GameObject _enemyHandPass;
+    private GameObject _playerHandPass;
+
+    private int _turn;
+    private int _turnTime;
+    private int _playerPoints;
+    private int _enemyPoints;
+
+    private bool _isPlayerPassed;
+    private bool _isEnemyPassed;
+
+    private CardInfoScript _choosenCard;
     private Camera _mainCamera;
-
-    public GameObject[] HowToPlayList;
-    public GameObject HowToPlayFon;
-
-    //ChangeGameCharacteristics
-    public int MaxNumberCardInField = 10;
-    public int TurnDuration = 30;
-    public int ValueDeckCards = 20;
-    public int ValueHandCards = 10;
-
-    public float TimeDrawCardStart = 0.15f;
-    public float TimeDrawCard = 0.3f;
 
     public bool IsPlayerTurn
     {
@@ -266,7 +266,7 @@ public class GameManager : MonoBehaviour
 
         if (IsPlayerTurn)
         {
-            if (!isPlayerPassed)
+            if (!_isPlayerPassed)
             {
                 while (_turnTime-- > 0)
                 {
@@ -326,16 +326,16 @@ public class GameManager : MonoBehaviour
         if (PlayerHandCards.Count == 0)
         {
             _playerHandPass.SetActive(true);
-            isPlayerPassed = true;
+            _isPlayerPassed = true;
         }
 
         if (EnemyHandCards.Count == 0)
         {
             _enemyHandPass.SetActive(true);
-            isEnemyPassed = true;
+            _isEnemyPassed = true;
         }
 
-        if (isPlayerPassed && isEnemyPassed)
+        if (_isPlayerPassed && _isEnemyPassed)
         {
             EndGame();
             UIManager.Instance.EndGame(_playerPoints, _enemyPoints);
@@ -345,7 +345,7 @@ public class GameManager : MonoBehaviour
         IsHandCardPlaying = false;
         UIManager.Instance.ChangeEndTurnButtonInteractable(IsPlayerTurn);
 
-        if(!(isPlayerPassed && isEnemyPassed))
+        if(!(_isPlayerPassed && _isEnemyPassed))
         AllCoroutine.Add(StartCoroutine(TurnFunk()));
     }
 
@@ -1211,8 +1211,8 @@ public class GameManager : MonoBehaviour
 
         _enemyHandPass.SetActive(false);
         _playerHandPass.SetActive(false);
-        isPlayerPassed = false;
-        isEnemyPassed = false;
+        _isPlayerPassed = false;
+        _isEnemyPassed = false;
 
         CurrentGame = new Game();
 

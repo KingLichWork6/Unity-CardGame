@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -209,7 +209,7 @@ public class CardMechanics : MonoBehaviour
                 targetCard.BaseCard.ArmorPoints = 0;
 
             UIManager.Instance.CheckArmor(targetCardInfo);
-            Debug.Log(startCard.BaseCard.Name + " èçìåíèëà áðîíþ " + targetCard.BaseCard.Name + " â ðàçìåðå " + -temporaryArmor + "\n" + (targetCard.BaseCard.ArmorPoints + temporaryArmor) + " => " + targetCard.BaseCard.ArmorPoints);
+            Debug.Log(startCard.BaseCard.Name + " Ð¸Ð·Ð¼ÐµÐ½Ð¸Ð»Ð° Ð±Ñ€Ð¾Ð½ÑŽ " + targetCard.BaseCard.Name + " Ð² Ñ€Ð°Ð·Ð¼ÐµÑ€Ðµ " + -temporaryArmor + "\n" + (targetCard.BaseCard.ArmorPoints + temporaryArmor) + " => " + targetCard.BaseCard.ArmorPoints);
         }
 
         targetCard.BaseCard.Points += value;
@@ -222,7 +222,7 @@ public class CardMechanics : MonoBehaviour
             EffectsManager.Instance.StartShaderEffect(targetCardInfo, Color.grey, value);
 
         if (value != 0)
-            Debug.Log(startCard.BaseCard.Name + " èçìåíèëà ñèëó " + targetCard.BaseCard.Name + " â ðàçìåðå " + value + "\n" + (targetCard.BaseCard.Points - value) + " => " + targetCard.BaseCard.Points);
+            Debug.Log(startCard.BaseCard.Name + " Ð¸Ð·Ð¼ÐµÐ½Ð¸Ð»Ð° ÑÐ¸Ð»Ñƒ " + targetCard.BaseCard.Name + " Ð² Ñ€Ð°Ð·Ð¼ÐµÑ€Ðµ " + value + "\n" + (targetCard.BaseCard.Points - value) + " => " + targetCard.BaseCard.Points);
 
         CheckUICards(targetCardInfo, startCardInfo, isEndTurn);
         ShowPointsUI(targetCardInfo);
@@ -264,7 +264,7 @@ public class CardMechanics : MonoBehaviour
 
         if (startCard != null)
         {
-            Debug.Log(startCard.SelfCard.BaseCard.Name + " óíè÷òîæèëà " + card.SelfCard.BaseCard.Name);
+            Debug.Log(startCard.SelfCard.BaseCard.Name + " ÑƒÐ½Ð¸Ñ‡Ñ‚Ð¾Ð¶Ð¸Ð»Ð° " + card.SelfCard.BaseCard.Name);
             EffectsManager.Instance.StartParticleEffects(startCard.transform, card.transform, -1);
         }
 
@@ -559,7 +559,7 @@ public class CardMechanics : MonoBehaviour
     {
         if (card.SelfCard.StatusEffects.IsSelfShielded && card.StatusEffectShield == null)
         {
-            card.CardStatusEffectImage.material = new Material(EffectsManager.Instance.shieldMaterial);
+            card.CardStatusEffectImage.material = new Material(EffectsManager.Instance.ShieldMaterial);
             card.StatusEffectShield = Instantiate(card.StatusEffectPrefab, card.CardStatusEffectImage.gameObject.transform);
             card.StatusEffectShield.GetComponent<StatusEffect>().InitializeStatusEffect(StatusEffectsType.shield);
         }
@@ -573,7 +573,7 @@ public class CardMechanics : MonoBehaviour
 
         if (card.SelfCard.StatusEffects.IsIllusion && card.StatusEffectIllusion == null)
         {
-            card.CardStatusEffectImage.material = new Material(EffectsManager.Instance.illusionMaterial);
+            card.CardStatusEffectImage.material = new Material(EffectsManager.Instance.IllusionMaterial);
             card.StatusEffectIllusion = Instantiate(card.StatusEffectPrefab, card.CardStatusEffectImage.gameObject.transform);
             card.StatusEffectIllusion.GetComponent<StatusEffect>().InitializeStatusEffect(StatusEffectsType.illusion);
         }
@@ -592,14 +592,14 @@ public class CardMechanics : MonoBehaviour
 
         if (card.SelfCard.StatusEffects.IsInvulnerability && card.StatusEffectInvulnerability == null)
         {
-            card.CardStatusEffectImage.material = new Material(EffectsManager.Instance.invulnerabilityMaterial);
+            card.CardStatusEffectImage.material = new Material(EffectsManager.Instance.InvulnerabilityMaterial);
             card.StatusEffectInvulnerability = Instantiate(card.StatusEffectPrefab, card.CardStatusEffectImage.gameObject.transform);
             card.StatusEffectInvulnerability.GetComponent<StatusEffect>().InitializeStatusEffect(StatusEffectsType.invulnerability);
         }
 
         if (card.SelfCard.StatusEffects.IsInvisibility && card.StatusEffectInvisibility == null)
         {
-            card.CardStatusEffectImage.material = new Material(EffectsManager.Instance.invisibilityMaterial);
+            card.CardStatusEffectImage.material = new Material(EffectsManager.Instance.InvisibilityMaterial);
             card.StatusEffectInvisibility = Instantiate(card.StatusEffectPrefab, card.CardStatusEffectImage.gameObject.transform);
             card.StatusEffectInvisibility.GetComponent<StatusEffect>().InitializeStatusEffect(StatusEffectsType.invisibility);
         }

@@ -1,3 +1,4 @@
+﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,17 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    [HideInInspector] public bool IsPause;
+
+    public GameObject EndGamePanel;
+
+    [SerializeField] private TextMeshProUGUI _endGameText;
+
+    [SerializeField] private TextMeshProUGUI _endGameWin;
+    [SerializeField] private TextMeshProUGUI _endGameLose;
+    [SerializeField] private TextMeshProUGUI _endGameDraw;
+    [SerializeField] private TextMeshProUGUI _pauseText;
+
     private TextMeshProUGUI _playerPointsTMPro;
     private TextMeshProUGUI _enemyPointsTMPro;
     private TextMeshProUGUI _playerDeckTMPro;
@@ -27,16 +39,6 @@ public class UIManager : MonoBehaviour
     private Image[] _imageTurnTime = new Image[2];
     private LineRenderer _line;
     private Button _endTurnButton;
-
-    public GameObject EndGamePanel;
-    public TextMeshProUGUI EndGameText;
-
-    public TextMeshProUGUI EndGameWin;
-    public TextMeshProUGUI EndGameLose;
-    public TextMeshProUGUI EndGameDraw;
-    public TextMeshProUGUI PauseText;
-
-    public bool IsPause;
 
     private void Awake()
     {
@@ -194,17 +196,17 @@ public class UIManager : MonoBehaviour
 
         if (playerPoints < enemyPoint)
         {
-            EndGameText.text = EndGameLose.text;
+            _endGameText.text = _endGameLose.text;
         }
 
         else if (playerPoints > enemyPoint)
         {
-            EndGameText.text = EndGameWin.text;
+            _endGameText.text = _endGameWin.text;
         }
 
         else
         {
-            EndGameText.text = EndGameDraw.text;
+            _endGameText.text = _endGameDraw.text;
         }
     }
 
@@ -212,7 +214,7 @@ public class UIManager : MonoBehaviour
     {
         IsPause = true;
         EndGamePanel.SetActive(true);
-        EndGameText.text = PauseText.text;
+        _endGameText.text = _pauseText.text;
     }
     public void UnPause()
     {

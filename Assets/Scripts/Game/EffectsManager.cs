@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using System.Collections;
 using System.Xml.Serialization;
 using Unity.Mathematics;
@@ -21,17 +21,11 @@ public class EffectsManager : MonoBehaviour
         }
     }
 
-    public ParticleSystem[] DamageParticle;
-    public ParticleSystem[] DamageBurstParticle;
-
-    public ParticleSystem[] BoostParticle;
-    public ParticleSystem[] BoostBurstParticle;
-
-    public Material destroyMaterial;
-    public Material shieldMaterial;
-    public Material illusionMaterial;
-    public Material invisibilityMaterial;
-    public Material invulnerabilityMaterial;
+    public Material DestroyMaterial;
+    public Material ShieldMaterial;
+    public Material IllusionMaterial;
+    public Material InvisibilityMaterial;
+    public Material InvulnerabilityMaterial;
 
     public GameObject CardBackPlayer;
     public GameObject CardBackEnemy;
@@ -41,6 +35,12 @@ public class EffectsManager : MonoBehaviour
     [HideInInspector] public int ParticleZCoordinate = 50;
     [HideInInspector] public float ParticleTimeToMove = 0.4f;
     [HideInInspector] public float ShaderChangePointsTime = 1f;
+
+    [SerializeField] private ParticleSystem[] _damageParticle;
+    [SerializeField] private ParticleSystem[] _damageBurstParticle;
+
+    [SerializeField] private ParticleSystem[] _boostParticle;
+    [SerializeField] private ParticleSystem[] _boostBurstParticle;
 
     private void Awake()
     {
@@ -96,25 +96,25 @@ public class EffectsManager : MonoBehaviour
         {
             for (int i = 0; i < 9; i++)
             {
-                if (!BoostParticle[i].isPlaying)
+                if (!_boostParticle[i].isPlaying)
                 {
                     if (!isSelf)
                     {
 
-                        BoostParticle[i].transform.position = new Vector3(start.position.x, start.position.y, ParticleZCoordinate);
-                        BoostParticle[i].Play();
-                        BoostParticle[i].transform.DOMove(new Vector3(end.position.x, end.position.y, ParticleZCoordinate), ParticleTimeToMove);
+                        _boostParticle[i].transform.position = new Vector3(start.position.x, start.position.y, ParticleZCoordinate);
+                        _boostParticle[i].Play();
+                        _boostParticle[i].transform.DOMove(new Vector3(end.position.x, end.position.y, ParticleZCoordinate), ParticleTimeToMove);
 
                         if (isStartDelay)
-                            BoostBurstParticle[i].startDelay = ParticleTimeToMove;
-                        BoostBurstParticle[i].transform.position = new Vector3(end.position.x, end.position.y, ParticleZCoordinate);
-                        BoostBurstParticle[i].Play();
+                            _boostBurstParticle[i].startDelay = ParticleTimeToMove;
+                        _boostBurstParticle[i].transform.position = new Vector3(end.position.x, end.position.y, ParticleZCoordinate);
+                        _boostBurstParticle[i].Play();
                         break;
                     }
                     else
                     {
-                        BoostBurstParticle[i].transform.position = new Vector3(start.position.x, start.position.y, ParticleZCoordinate);
-                        BoostBurstParticle[i].Play();
+                        _boostBurstParticle[i].transform.position = new Vector3(start.position.x, start.position.y, ParticleZCoordinate);
+                        _boostBurstParticle[i].Play();
                         break;
                     }
                 }
@@ -125,24 +125,24 @@ public class EffectsManager : MonoBehaviour
         {
             for (int i = 0; i < 9; i++)
             {
-                if (!DamageParticle[i].isPlaying)
+                if (!_damageParticle[i].isPlaying)
                 {
                     if (!isSelf)
                     {
-                        DamageParticle[i].transform.position = new Vector3(start.position.x, start.position.y, ParticleZCoordinate);
-                        DamageParticle[i].Play();
-                        DamageParticle[i].transform.DOMove(new Vector3(end.position.x, end.position.y, ParticleZCoordinate), ParticleTimeToMove);
+                        _damageParticle[i].transform.position = new Vector3(start.position.x, start.position.y, ParticleZCoordinate);
+                        _damageParticle[i].Play();
+                        _damageParticle[i].transform.DOMove(new Vector3(end.position.x, end.position.y, ParticleZCoordinate), ParticleTimeToMove);
 
                         if (isStartDelay)
-                            DamageBurstParticle[i].startDelay = ParticleTimeToMove;
-                        DamageBurstParticle[i].transform.position = new Vector3(end.position.x, end.position.y, ParticleZCoordinate);
-                        DamageBurstParticle[i].Play();
+                            _damageBurstParticle[i].startDelay = ParticleTimeToMove;
+                        _damageBurstParticle[i].transform.position = new Vector3(end.position.x, end.position.y, ParticleZCoordinate);
+                        _damageBurstParticle[i].Play();
                         break;
                     }
                     else
                     {
-                        DamageBurstParticle[i].transform.position = new Vector3(start.position.x, start.position.y, ParticleZCoordinate);
-                        DamageBurstParticle[i].Play();
+                        _damageBurstParticle[i].transform.position = new Vector3(start.position.x, start.position.y, ParticleZCoordinate);
+                        _damageBurstParticle[i].Play();
                         break;
                     }
                 }
@@ -190,10 +190,10 @@ public class EffectsManager : MonoBehaviour
         card.CardComponents.SetActive(false);
         card.DestroyGameObject.SetActive(true);
 
-        Material DestroyMaterial = new Material(destroyMaterial);
-        card.DestroyImage.material = DestroyMaterial;
-        DestroyMaterial.SetTexture("_Image", card.SelfCard.BaseCard.ImageTexture);
-        DestroyMaterial.SetFloat("_Trashold", 0);
+        Material destroyMaterial = new Material(DestroyMaterial);
+        card.DestroyImage.material = destroyMaterial;
+        destroyMaterial.SetTexture("_Image", card.SelfCard.BaseCard.ImageTexture);
+        destroyMaterial.SetFloat("_Trashold", 0);
 
         StartCoroutine(DestroyEffectsCoroutine(card));
     }

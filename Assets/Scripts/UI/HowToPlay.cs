@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,10 +19,14 @@ public class HowToPlay : MonoBehaviour
         }
     }
 
-    public bool IsHowToPlay;
+    private bool _isHowToPlay;
+
     [HideInInspector] public GameObject[] HowToPlayDeckList;
     [HideInInspector] public GameObject[] HowToPlayGameList;
+
     private GameObject HowToPlayGameFon;
+
+    public bool IsHowToPlay => _isHowToPlay;
 
     private void Awake()
     {
@@ -38,9 +42,14 @@ public class HowToPlay : MonoBehaviour
         }
     }
 
+    public void SetIsHowToPlay(bool isOn)
+    {
+        _isHowToPlay = isOn;
+    }
+
     public void HowToPlayDeckBuild(GameObject[] list)
     {
-        if (IsHowToPlay)
+        if (_isHowToPlay)
         {
             HowToPlayDeckList = list;
             StartCoroutine(HowToPlayDeckBuildCoroutine());
@@ -65,7 +74,7 @@ public class HowToPlay : MonoBehaviour
 
     public void HowToPlayGame(GameObject[] list, GameObject fon)
     {
-        if (IsHowToPlay)
+        if (_isHowToPlay)
         {
             HowToPlayGameFon = fon;
             HowToPlayGameList = list;
@@ -90,7 +99,7 @@ public class HowToPlay : MonoBehaviour
 
         HowToPlayGameFon.SetActive(false);
         GameManager.Instance.StartTurnCoroutine();
-        IsHowToPlay = false;
+        _isHowToPlay = false;
         StopCoroutine(HowToPlayGameCoroutine());
     }
 
