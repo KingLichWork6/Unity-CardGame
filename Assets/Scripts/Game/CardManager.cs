@@ -6,10 +6,19 @@ using UnityEngine;
 public static class CardManagerList
 {
     public static List<Card> AllCards = new List<Card>();
-    public static List<Card> TransformationCards = new List<Card>();
-    public static List<Card> SummonCards = new List<Card>();
 
-    public static List<Card> DebugCards = new List<Card>();
+    public static Card FindCard(string name)
+    {
+        Card findedCard = new Card();
+
+        foreach (var card in AllCards)
+        {
+            if(card.BaseCard.Name == name)
+                findedCard = card;
+        }
+
+        return findedCard;
+    }
 }
 
 public class CardManager : MonoBehaviour
@@ -35,6 +44,9 @@ public class CardManager : MonoBehaviour
         {
             Name = data.Name,
             AbilityName = data.AbilityName,
+
+            IsBaseCard = data.IsBaseCard,
+
             DescriptionEng = data.DescriptionEng,
             DescriptionRu = data.DescriptionRu,
 
@@ -81,7 +93,7 @@ public class CardManager : MonoBehaviour
 
         card.Spawns = new Spawns
         {
-            SpawnCardNumber = data.SpawnCardNumber,
+            SpawnCardName = data.SpawnCardName,
             SpawnCardCount = data.SpawnCardCount
         };
 
@@ -106,7 +118,7 @@ public class CardManager : MonoBehaviour
         {
             DestroyCardPoints = data.DestroyCardPoints,
             SwapPoints = data.SwapPoints,
-            TransformationNumber = data.TransformationNumber,
+            TransformationCardName = data.TransformationName,
             ReturnDamageValue = data.ReturnDamageValue,
             HealDamageValue = data.HealDamageValue
         };

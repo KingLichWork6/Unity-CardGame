@@ -120,11 +120,11 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         CheckStatusEffectGameObject(card);
         SpawnCardView.SetActive(false);
 
-        if (card.SelfCard.Spawns.SpawnCardCount != 0 && card.SelfCard.Spawns.SpawnCardNumber == -1)
+        if (card.SelfCard.Spawns.SpawnCardCount != 0 && card.SelfCard.Spawns.SpawnCardName == "self")
             ShowSpawnCardView(card, true, true);
         else if (card.SelfCard.Spawns.SpawnCardCount != 0)
             ShowSpawnCardView(card, true);
-        else if (card.SelfCard.UniqueMechanics.TransformationNumber != -1)
+        else if (card.SelfCard.UniqueMechanics.TransformationCardName != "")
             ShowSpawnCardView(card, false);
     }
 
@@ -139,9 +139,9 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         if (isSpawn && selfIllusion)
             SpawnCard = card.SelfCard;
         else if (isSpawn && !selfIllusion)
-            SpawnCard = CardManagerList.SummonCards[card.SelfCard.Spawns.SpawnCardNumber];
+            SpawnCard = CardManagerList.FindCard(card.SelfCard.Spawns.SpawnCardName);
         else
-            SpawnCard = CardManagerList.TransformationCards[card.SelfCard.UniqueMechanics.TransformationNumber];
+            SpawnCard = CardManagerList.FindCard(card.SelfCard.UniqueMechanics.TransformationCardName);
 
         imageMaterial.SetTexture("_Image", SpawnCard.BaseCard.ImageTexture);
         imageMaterial.SetColor("_Color", SpawnCard.BaseCard.ColorTheme);
@@ -272,7 +272,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         else
             StatusEffectDescriptionList[8].SetActive(false);
 
-        if (card.SelfCard.StatusEffects.IsIllusion || card.SelfCard.Spawns.SpawnCardNumber == -1)
+        if (card.SelfCard.StatusEffects.IsIllusion || card.SelfCard.Spawns.SpawnCardName == "self")
         {
             StatusEffectDescriptionList[9].SetActive(true);
             countStatuseffects++;

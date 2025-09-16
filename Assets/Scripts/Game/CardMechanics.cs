@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CardMechanics : MonoBehaviour
 {
@@ -469,7 +468,7 @@ public class CardMechanics : MonoBehaviour
     {
         GameObject spawnCard;
 
-        if (card.SelfCard.Spawns.SpawnCardNumber == -1)
+        if (card.SelfCard.Spawns.SpawnCardName == "self")
         {
             for (int i = 0; i < card.SelfCard.Spawns.SpawnCardCount; i++)
             {
@@ -515,7 +514,7 @@ public class CardMechanics : MonoBehaviour
 
                 if (player) GameManager.Instance.PlayerFieldCards.Add(summonCardInfo);
                 else GameManager.Instance.EnemyFieldCards.Add(summonCardInfo);
-                summonCardInfo.ShowCardInfo(CardManagerList.SummonCards[card.SelfCard.Spawns.SpawnCardNumber]);
+                summonCardInfo.ShowCardInfo(CardManagerList.FindCard(card.SelfCard.Spawns.SpawnCardName));
                 spawnCard.AddComponent<ChoseCard>();
                 spawnCard.GetComponent<ChoseCard>().enabled = false;
             }
@@ -524,7 +523,7 @@ public class CardMechanics : MonoBehaviour
 
     public void Transformation(CardInfoScript card)
     {
-        card.SelfCard = CardManagerList.TransformationCards[card.SelfCard.UniqueMechanics.TransformationNumber];
+        card.SelfCard = CardManagerList.FindCard(card.SelfCard.UniqueMechanics.TransformationCardName);
         card.ShowCardInfo(card.SelfCard);
 
         EffectsManager.Instance.StartParticleEffects(card.transform, card.transform, 1);

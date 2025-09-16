@@ -16,6 +16,8 @@ public struct BaseCard
     public string Name;
     public string AbilityName;
 
+    public bool IsBaseCard;
+
     public string DescriptionEng;
     public string DescriptionRu;
 
@@ -70,7 +72,7 @@ public struct EndTurnActions
 
 public struct Spawns
 {
-    public int SpawnCardNumber;
+    public string SpawnCardName;
     public int SpawnCardCount;
 }
 
@@ -101,7 +103,7 @@ public struct UniqueMechanics
 
     public bool SwapPoints;
 
-    public int TransformationNumber;
+    public string TransformationCardName;
 
     public int ReturnDamageValue;
 

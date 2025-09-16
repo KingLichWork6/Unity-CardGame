@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
         while (i++ < MaxNumberCardInField)
         {
             GameObject cardDebug = Instantiate(CardPref, _enemyField, false);
-            cardDebug.GetComponent<CardInfoScript>().ShowCardInfo(CardManagerList.DebugCards[0]);
+            cardDebug.GetComponent<CardInfoScript>().ShowCardInfo(CardManagerList.AllCards[0]);
             cardDebug.AddComponent<ChoseCard>();
             cardDebug.GetComponent<ChoseCard>().enabled = false;
             cardDebug.transform.SetParent(_enemyField);
@@ -623,7 +623,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if (card.SelfCard.UniqueMechanics.TransformationNumber != -1)
+        if (card.SelfCard.UniqueMechanics.TransformationCardName != "")
         {
             CardMechanics.Instance.Transformation(card);
         }
@@ -824,7 +824,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (card.SelfCard.UniqueMechanics.TransformationNumber != -1)
+        if (card.SelfCard.UniqueMechanics.TransformationCardName != "")
         {
             CardMechanics.Instance.Transformation(card);
         }

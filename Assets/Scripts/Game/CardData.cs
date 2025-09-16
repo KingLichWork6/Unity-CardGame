@@ -7,6 +7,8 @@ public class CardData
     public string Name;
     public string AbilityName;
 
+    public bool IsBaseCard = true;
+
     [TextArea] public string DescriptionEng;
     [TextArea] public string DescriptionRu;
 
@@ -48,7 +50,7 @@ public class CardData
     public int ArmorOther;
 
     // --- Spawns ---
-    public int SpawnCardNumber;
+    public string SpawnCardName;
     public int SpawnCardCount;
 
     // --- Draw ---
@@ -68,7 +70,7 @@ public class CardData
     // --- Unique ---
     public int DestroyCardPoints;
     public bool SwapPoints;
-    public int TransformationNumber;
+    public string TransformationName;
     public int ReturnDamageValue;
     public int HealDamageValue;
 }

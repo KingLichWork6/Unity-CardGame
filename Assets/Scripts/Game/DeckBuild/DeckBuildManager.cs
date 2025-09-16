@@ -59,6 +59,9 @@ public class DeckBuildManager : MonoBehaviour
 
         foreach (Card card in CardManagerList.AllCards)
         {
+            if (!card.BaseCard.IsBaseCard)
+                continue;
+
             GameObject newCard = Instantiate(_cardPref, Vector3.zero, Quaternion.identity, _cardContentView.transform);
             newCard.transform.position = new Vector3(0, 0, 100);
             newCard.AddComponent<ClickCardOnDeckBuild>().IsMainCard = true;
